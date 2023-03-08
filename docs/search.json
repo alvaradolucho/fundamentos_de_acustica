@@ -1,0 +1,9 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Fundamentos de Acústica",
+    "section": "",
+    "text": "Veamos que tal esta cosita\n\n\nCode\nimport {p5} from \"@tmcw/p5\"\n\np5(sketch => {\n  let system;\n  sketch.setup = function() {\n    sketch.createCanvas(width, 320);\n  };\n  sketch.draw = function() {\n    sketch.translate(sketch.width / 2, sketch.height / 2);\n    sketch.background(200);\n    sketch.rect(-50, -50, 100, 100);\n  }\n})"
+  }
+]

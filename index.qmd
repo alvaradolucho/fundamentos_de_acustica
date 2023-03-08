@@ -4,3 +4,22 @@ format:
     html:
         code-fold: true
 ---
+
+Veamos que tal esta cosita
+
+```{ojs}
+//<script>
+import {p5} from "@tmcw/p5"
+
+p5(sketch => {
+  let system;
+  sketch.setup = function() {
+    sketch.createCanvas(width, 320);
+  };
+  sketch.draw = function() {
+    sketch.translate(sketch.width / 2, sketch.height / 2);
+    sketch.background(200);
+    sketch.rect(-50, -50, 100, 100);
+  }
+})
+```

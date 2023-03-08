@@ -124,8 +124,6 @@ Entenderemos como **sonido** a aquellas pertubaciones en el aire (desde ahora **
 | ----------- | ----------- | ----------- | 
 | Infrasonido  | Sonido | Ultrasonido |
 
-<!-- ![convert notebook to web app](https://raw.githubusercontent.com/mljar/visual-identity/main/mercury/mercury_convert_notebook.png)
--->
 
 ### Elementos del sonido
 
@@ -199,6 +197,7 @@ Con ello, podemos obtener la frecuencia circular de oscilación $\omega$, que pu
 $$\omega = 2\pi f = \dfrac{2\pi}{T}$$
 
 Es importante reconocer las similaridades en los casos espacial y temporal:
+
 * $f$ es análoga a $\nu$.
 * $T$ es análoga a $\lambda$.
 * $\omega$ es análoga a $k$.

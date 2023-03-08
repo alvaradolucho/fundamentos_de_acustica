@@ -90,7 +90,7 @@ En la física exploramos desde lo más pequeño hasta lo más grande. Desde una 
 
 | Longitud | Tiempo | Masa |
 |----------|--------|------|
-| Metros | Segundos | Hilógramos |
+| Metros | Segundos | Kilógramos |
 | m | s | kg |
 
 A partir de estas unidades, se pueden desarrollar teóricamente todas las unidades derivadas, como centrímetros (cm), milímetros (mm), minutos (min), horas (hrs), días, años, milisegundos (ms), gramos (g), litros (lt), etc.

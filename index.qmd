@@ -3,6 +3,7 @@ title: "Fundamentos de Acústica"
 format:
     html:
         code-fold: true
+        theme: darkly
 ---
 
 ```{ojs}

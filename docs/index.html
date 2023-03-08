@@ -154,23 +154,28 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 </header>
 
-<p>Veamos que tal esta cosita</p>
 <div class="cell">
-<details>
+<details class="hidden">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb1" data-startfrom="12" data-source-offset="-12"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 11;"><span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> {p5} <span class="im">from</span> <span class="st">"@tmcw/p5"</span></span>
+<div class="sourceCode cell-code hidden" id="cb1" data-startfrom="12" data-source-offset="-74"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 11;"><span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> {P5} <span class="im">from</span> <span class="st">"@tmcw/p5"</span></span>
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="fu">p5</span>(sketch <span class="kw">=&gt;</span> {</span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  <span class="kw">let</span> system<span class="op">;</span></span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>  sketch<span class="op">.</span><span class="at">setup</span> <span class="op">=</span> <span class="kw">function</span>() {</span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>    sketch<span class="op">.</span><span class="fu">createCanvas</span>(width<span class="op">,</span> <span class="dv">320</span>)<span class="op">;</span></span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>  }<span class="op">;</span></span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>  sketch<span class="op">.</span><span class="at">draw</span> <span class="op">=</span> <span class="kw">function</span>() {</span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>    sketch<span class="op">.</span><span class="fu">translate</span>(sketch<span class="op">.</span><span class="at">width</span> <span class="op">/</span> <span class="dv">2</span><span class="op">,</span> sketch<span class="op">.</span><span class="at">height</span> <span class="op">/</span> <span class="dv">2</span>)<span class="op">;</span></span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>    sketch<span class="op">.</span><span class="fu">background</span>(<span class="dv">200</span>)<span class="op">;</span></span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>    sketch<span class="op">.</span><span class="fu">rect</span>(<span class="op">-</span><span class="dv">50</span><span class="op">,</span> <span class="op">-</span><span class="dv">50</span><span class="op">,</span> <span class="dv">100</span><span class="op">,</span> <span class="dv">100</span>)<span class="op">;</span></span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="co">//P5 = require('https://unpkg.com/p5@1.2.0/lib/p5.js');</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span><span class="op">*</span> <span class="fu">p5</span>(sketch) {</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> element <span class="op">=</span> DOM<span class="op">.</span><span class="fu">element</span>(<span class="st">'div'</span>)<span class="op">;</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>  <span class="kw">yield</span> element<span class="op">;</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> instance <span class="op">=</span> <span class="kw">new</span> <span class="fu">P5</span>(sketch<span class="op">,</span> element<span class="op">,</span> <span class="kw">true</span>)<span class="op">;</span></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>  <span class="cf">try</span> {</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>    <span class="cf">while</span> (<span class="kw">true</span>) {</span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>      <span class="kw">yield</span> element<span class="op">;</span></span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">finally</span> {</span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>    instance<span class="op">.</span><span class="fu">remove</span>()<span class="op">;</span></span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display">
 <div>
@@ -181,9 +186,101 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div class="cell-output cell-output-display">
 <div>
-<div id="ojs-cell-1-2" data-nodetype="expression">
+<div id="ojs-cell-1-2" data-nodetype="declaration">
 
 </div>
+</div>
+</div>
+</div>
+<p>Veamos que tal esta cosita</p>
+<div class="cell">
+<details class="hidden">
+<summary>Code</summary>
+<div class="sourceCode cell-code hidden" id="cb2" data-startfrom="40" data-source-offset="-31"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 39;"><span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a><span class="pp">require</span>(<span class="st">"p5"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-2-1" data-nodetype="expression">
+
+</div>
+</div>
+</div>
+<details class="hidden">
+<summary>Code</summary>
+<div class="sourceCode cell-code hidden" id="cb3" data-startfrom="42" data-source-offset="-48"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 41;"><span id="cb3-42"><a href="#cb3-42" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Wave {</span>
+<span id="cb3-43"><a href="#cb3-43" aria-hidden="true" tabindex="-1"></a>  <span class="fu">constructor</span>(p5<span class="op">,</span> amp<span class="op">,</span> freq<span class="op">,</span> phase<span class="op">,</span> res<span class="op">=</span><span class="dv">500</span>){</span>
+<span id="cb3-44"><a href="#cb3-44" aria-hidden="true" tabindex="-1"></a>    <span class="kw">this</span><span class="op">.</span><span class="at">p5</span> <span class="op">=</span> p5<span class="op">;</span></span>
+<span id="cb3-45"><a href="#cb3-45" aria-hidden="true" tabindex="-1"></a>    <span class="kw">this</span><span class="op">.</span><span class="at">amp</span> <span class="op">=</span> amp<span class="op">;</span></span>
+<span id="cb3-46"><a href="#cb3-46" aria-hidden="true" tabindex="-1"></a>    <span class="kw">this</span><span class="op">.</span><span class="at">freq</span> <span class="op">=</span> freq<span class="op">;</span></span>
+<span id="cb3-47"><a href="#cb3-47" aria-hidden="true" tabindex="-1"></a>    <span class="kw">this</span><span class="op">.</span><span class="at">phase</span> <span class="op">=</span> phase<span class="op">;</span></span>
+<span id="cb3-48"><a href="#cb3-48" aria-hidden="true" tabindex="-1"></a>    <span class="kw">this</span><span class="op">.</span><span class="at">res</span> <span class="op">=</span> res<span class="op">;</span></span>
+<span id="cb3-49"><a href="#cb3-49" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb3-50"><a href="#cb3-50" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb3-51"><a href="#cb3-51" aria-hidden="true" tabindex="-1"></a>  <span class="fu">createSliders</span>(){</span>
+<span id="cb3-52"><a href="#cb3-52" aria-hidden="true" tabindex="-1"></a>    <span class="kw">this</span><span class="op">.</span><span class="at">ampSlider</span> <span class="op">=</span> <span class="kw">this</span><span class="op">.</span><span class="at">p5</span><span class="op">.</span><span class="fu">createSlider</span>(<span class="op">-</span><span class="dv">200</span><span class="op">,</span> <span class="dv">200</span><span class="op">,</span> <span class="kw">this</span><span class="op">.</span><span class="at">amp</span>)<span class="op">;</span></span>
+<span id="cb3-53"><a href="#cb3-53" aria-hidden="true" tabindex="-1"></a>    <span class="kw">this</span><span class="op">.</span><span class="at">freqSlider</span> <span class="op">=</span> <span class="kw">this</span><span class="op">.</span><span class="at">p5</span><span class="op">.</span><span class="fu">createSlider</span>(<span class="fl">0.01</span><span class="op">,</span> <span class="dv">20</span><span class="op">,</span> <span class="kw">this</span><span class="op">.</span><span class="at">freq</span>)<span class="op">;</span></span>
+<span id="cb3-54"><a href="#cb3-54" aria-hidden="true" tabindex="-1"></a>    <span class="kw">this</span><span class="op">.</span><span class="at">phaseSlider</span> <span class="op">=</span> <span class="kw">this</span><span class="op">.</span><span class="at">p5</span><span class="op">.</span><span class="fu">createSlider</span>(<span class="dv">0</span><span class="op">,</span> <span class="kw">this</span><span class="op">.</span><span class="at">p5</span><span class="op">.</span><span class="at">TWO_PI</span><span class="op">,</span> <span class="kw">this</span><span class="op">.</span><span class="at">phase</span>)<span class="op">;</span></span>
+<span id="cb3-55"><a href="#cb3-55" aria-hidden="true" tabindex="-1"></a>    <span class="kw">this</span><span class="op">.</span><span class="at">resSlider</span> <span class="op">=</span> <span class="kw">this</span><span class="op">.</span><span class="at">p5</span><span class="op">.</span><span class="fu">createSlider</span>(<span class="dv">1</span><span class="op">,</span> <span class="dv">1500</span><span class="op">,</span> <span class="kw">this</span><span class="op">.</span><span class="at">res</span>)<span class="op">;</span></span>
+<span id="cb3-56"><a href="#cb3-56" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb3-57"><a href="#cb3-57" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb3-58"><a href="#cb3-58" aria-hidden="true" tabindex="-1"></a>  <span class="fu">evaluate</span>(x<span class="op">,</span> norm<span class="op">=</span><span class="st">'norm'</span>){</span>
+<span id="cb3-59"><a href="#cb3-59" aria-hidden="true" tabindex="-1"></a>      <span class="kw">let</span> width <span class="op">=</span> <span class="kw">this</span><span class="op">.</span><span class="at">p5</span><span class="op">.</span><span class="at">width</span><span class="op">;</span></span>
+<span id="cb3-60"><a href="#cb3-60" aria-hidden="true" tabindex="-1"></a>      <span class="cf">return</span> <span class="kw">this</span><span class="op">.</span><span class="at">amp</span> <span class="op">*</span> <span class="kw">this</span><span class="op">.</span><span class="at">p5</span><span class="op">.</span><span class="fu">sin</span>(<span class="kw">this</span><span class="op">.</span><span class="at">s</span><span class="op">.</span><span class="at">TWO_PI</span> <span class="op">*</span> <span class="kw">this</span><span class="op">.</span><span class="at">freq</span> <span class="op">*</span> x <span class="op">/</span> width <span class="op">+</span> <span class="kw">this</span><span class="op">.</span><span class="at">phase</span>)<span class="op">;</span></span>
+<span id="cb3-61"><a href="#cb3-61" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb3-62"><a href="#cb3-62" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb3-63"><a href="#cb3-63" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb3-64"><a href="#cb3-64" aria-hidden="true" tabindex="-1"></a>  <span class="fu">draw</span>(res<span class="op">=</span><span class="dv">500</span><span class="op">,</span> time<span class="op">=</span><span class="kw">true</span>){</span>
+<span id="cb3-65"><a href="#cb3-65" aria-hidden="true" tabindex="-1"></a>    <span class="kw">this</span><span class="op">.</span><span class="at">p5</span><span class="op">.</span><span class="fu">stroke</span>(<span class="dv">200</span>)<span class="op">;</span></span>
+<span id="cb3-66"><a href="#cb3-66" aria-hidden="true" tabindex="-1"></a>    <span class="kw">this</span><span class="op">.</span><span class="at">p5</span><span class="op">.</span><span class="fu">strokeWeight</span>(<span class="dv">4</span>)<span class="op">;</span></span>
+<span id="cb3-67"><a href="#cb3-67" aria-hidden="true" tabindex="-1"></a>    <span class="kw">let</span> y<span class="op">;</span></span>
+<span id="cb3-68"><a href="#cb3-68" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb3-69"><a href="#cb3-69" aria-hidden="true" tabindex="-1"></a>    <span class="kw">this</span><span class="op">.</span><span class="at">amp</span> <span class="op">=</span> <span class="kw">this</span><span class="op">.</span><span class="at">ampSlider</span><span class="op">.</span><span class="fu">value</span>()<span class="op">;</span></span>
+<span id="cb3-70"><a href="#cb3-70" aria-hidden="true" tabindex="-1"></a>    <span class="kw">this</span><span class="op">.</span><span class="at">freq</span> <span class="op">=</span> <span class="kw">this</span><span class="op">.</span><span class="at">freqSlider</span><span class="op">.</span><span class="fu">value</span>()<span class="op">;</span></span>
+<span id="cb3-71"><a href="#cb3-71" aria-hidden="true" tabindex="-1"></a>    <span class="kw">this</span><span class="op">.</span><span class="at">phase</span> <span class="op">=</span> <span class="kw">this</span><span class="op">.</span><span class="at">phaseSlider</span><span class="op">.</span><span class="fu">value</span>()<span class="op">;</span></span>
+<span id="cb3-72"><a href="#cb3-72" aria-hidden="true" tabindex="-1"></a>    <span class="kw">this</span><span class="op">.</span><span class="at">res</span> <span class="op">=</span> <span class="kw">this</span><span class="op">.</span><span class="at">resSlider</span><span class="op">.</span><span class="fu">value</span>()<span class="op">;</span></span>
+<span id="cb3-73"><a href="#cb3-73" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb3-74"><a href="#cb3-74" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> (<span class="kw">let</span> x <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> x <span class="op">&lt;</span> <span class="kw">this</span><span class="op">.</span><span class="at">p5</span><span class="op">.</span><span class="at">width</span><span class="op">;</span> x<span class="op">+=</span> <span class="kw">this</span><span class="op">.</span><span class="at">p5</span><span class="op">.</span><span class="at">width</span><span class="op">/</span><span class="kw">this</span><span class="op">.</span><span class="at">res</span>){</span>
+<span id="cb3-75"><a href="#cb3-75" aria-hidden="true" tabindex="-1"></a>      <span class="cf">if</span> (time) {</span>
+<span id="cb3-76"><a href="#cb3-76" aria-hidden="true" tabindex="-1"></a>        y <span class="op">=</span> <span class="kw">this</span><span class="op">.</span><span class="fu">evaluate</span>(x <span class="op">-</span> <span class="kw">this</span><span class="op">.</span><span class="at">p5</span><span class="op">.</span><span class="at">frameCount</span> <span class="op">*</span> <span class="dv">2</span><span class="op">,</span> <span class="st">'norm'</span>)<span class="op">;</span></span>
+<span id="cb3-77"><a href="#cb3-77" aria-hidden="true" tabindex="-1"></a>      } <span class="cf">else</span> {</span>
+<span id="cb3-78"><a href="#cb3-78" aria-hidden="true" tabindex="-1"></a>        y <span class="op">=</span> <span class="kw">this</span><span class="op">.</span><span class="fu">evaluate</span>(x<span class="op">,</span> <span class="st">'norm'</span>)<span class="op">;</span></span>
+<span id="cb3-79"><a href="#cb3-79" aria-hidden="true" tabindex="-1"></a>      }</span>
+<span id="cb3-80"><a href="#cb3-80" aria-hidden="true" tabindex="-1"></a>      <span class="kw">this</span><span class="op">.</span><span class="at">p5</span><span class="op">.</span><span class="fu">point</span>(x<span class="op">,</span> y)<span class="op">;</span></span>
+<span id="cb3-81"><a href="#cb3-81" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb3-82"><a href="#cb3-82" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb3-83"><a href="#cb3-83" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb3-84"><a href="#cb3-84" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-85"><a href="#cb3-85" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<div>
+<div id="ojs-cell-2-2" data-nodetype="declaration">
+
+</div>
+</div>
+</div>
+</div>
+<div class="cell">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb4" data-startfrom="88" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 87;"><span id="cb4-88"><a href="#cb4-88" aria-hidden="true" tabindex="-1"></a><span class="co">//&lt;script&gt;</span></span>
+<span id="cb4-89"><a href="#cb4-89" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-90"><a href="#cb4-90" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-91"><a href="#cb4-91" aria-hidden="true" tabindex="-1"></a><span class="fu">p5</span>(s1 <span class="kw">=&gt;</span> {</span>
+<span id="cb4-92"><a href="#cb4-92" aria-hidden="true" tabindex="-1"></a>  s1<span class="op">.</span><span class="at">setup</span> <span class="op">=</span> <span class="kw">function</span>() {</span>
+<span id="cb4-93"><a href="#cb4-93" aria-hidden="true" tabindex="-1"></a>    s1<span class="op">.</span><span class="fu">createCanvas</span>(s1<span class="op">.</span><span class="at">width</span><span class="op">,</span> <span class="dv">320</span>)<span class="op">;</span></span>
+<span id="cb4-94"><a href="#cb4-94" aria-hidden="true" tabindex="-1"></a>  }<span class="op">;</span></span>
+<span id="cb4-95"><a href="#cb4-95" aria-hidden="true" tabindex="-1"></a>  s1<span class="op">.</span><span class="at">draw</span> <span class="op">=</span> <span class="kw">function</span>() {</span>
+<span id="cb4-96"><a href="#cb4-96" aria-hidden="true" tabindex="-1"></a>    s1<span class="op">.</span><span class="fu">translate</span>(s1<span class="op">.</span><span class="at">width</span> <span class="op">/</span> <span class="dv">2</span><span class="op">,</span> s1<span class="op">.</span><span class="at">height</span> <span class="op">/</span> <span class="dv">2</span>)<span class="op">;</span></span>
+<span id="cb4-97"><a href="#cb4-97" aria-hidden="true" tabindex="-1"></a>    s1<span class="op">.</span><span class="fu">background</span>(<span class="dv">200</span>)<span class="op">;</span></span>
+<span id="cb4-98"><a href="#cb4-98" aria-hidden="true" tabindex="-1"></a>    s1<span class="op">.</span><span class="fu">rect</span>(<span class="op">-</span><span class="dv">50</span><span class="op">,</span> <span class="op">-</span><span class="dv">50</span><span class="op">,</span> <span class="dv">100</span><span class="op">,</span> <span class="dv">100</span>)<span class="op">;</span></span>
+<span id="cb4-99"><a href="#cb4-99" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb4-100"><a href="#cb4-100" aria-hidden="true" tabindex="-1"></a>  }</span>
+<span id="cb4-101"><a href="#cb4-101" aria-hidden="true" tabindex="-1"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<div id="ojs-cell-3" data-nodetype="expression">
+
 </div>
 </div>
 </div>
@@ -192,7 +289,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 </main> <!-- /main -->
 <script type="ojs-module-contents">
-{"contents":[{"methodName":"interpret","cellName":"ojs-cell-1","inline":false,"source":"//<script>\r\nimport {p5} from \"@tmcw/p5\"\r\n\r\np5(sketch => {\r\n  let system;\r\n  sketch.setup = function() {\r\n    sketch.createCanvas(width, 320);\r\n  };\r\n  sketch.draw = function() {\r\n    sketch.translate(sketch.width / 2, sketch.height / 2);\r\n    sketch.background(200);\r\n    sketch.rect(-50, -50, 100, 100);\r\n  }\r\n})\r\n"}]}
+{"contents":[{"methodName":"interpret","cellName":"ojs-cell-1","inline":false,"source":"// aquí van los códigos de javascript necesarios para correr el libro.\r\n\r\nimport {P5} from \"@tmcw/p5\"\r\n\r\n//P5 = require('https://unpkg.com/p5@1.2.0/lib/p5.js');\r\n\r\nfunction* p5(sketch) {\r\n  const element = DOM.element('div');\r\n  \r\n  yield element;\r\n  \r\n  const instance = new P5(sketch, element, true);\r\n  \r\n  try {\r\n    while (true) {\r\n      yield element;\r\n    }\r\n  } finally {\r\n    instance.remove();\r\n  }\r\n}\r\n\r\n"},{"methodName":"interpret","cellName":"ojs-cell-2","inline":false,"source":"//import {p5} from \"@tmcw/p5\"\r\nrequire(\"p5\")\r\n\r\nclass Wave {\r\n  constructor(p5, amp, freq, phase, res=500){\r\n    this.p5 = p5;\r\n    this.amp = amp;\r\n    this.freq = freq;\r\n    this.phase = phase;\r\n    this.res = res;\r\n  }\r\n  \r\n  createSliders(){\r\n    this.ampSlider = this.p5.createSlider(-200, 200, this.amp);\r\n    this.freqSlider = this.p5.createSlider(0.01, 20, this.freq);\r\n    this.phaseSlider = this.p5.createSlider(0, this.p5.TWO_PI, this.phase);\r\n    this.resSlider = this.p5.createSlider(1, 1500, this.res);\r\n  }\r\n  \r\n  evaluate(x, norm='norm'){\r\n      let width = this.p5.width;\r\n      return this.amp * this.p5.sin(this.s.TWO_PI * this.freq * x / width + this.phase);\r\n  }\r\n    \r\n  \r\n  draw(res=500, time=true){\r\n    this.p5.stroke(200);\r\n    this.p5.strokeWeight(4);\r\n    let y;\r\n    \r\n    this.amp = this.ampSlider.value();\r\n    this.freq = this.freqSlider.value();\r\n    this.phase = this.phaseSlider.value();\r\n    this.res = this.resSlider.value();\r\n    \r\n    for (let x = 0; x < this.p5.width; x+= this.p5.width/this.res){\r\n      if (time) {\r\n        y = this.evaluate(x - this.p5.frameCount * 2, 'norm');\r\n      } else {\r\n        y = this.evaluate(x, 'norm');\r\n      }\r\n      this.p5.point(x, y);\r\n    }\r\n  }\r\n  \r\n\r\n}\r\n"},{"methodName":"interpret","cellName":"ojs-cell-3","inline":false,"source":"//<script>\r\n\r\n\r\np5(s1 => {\r\n  s1.setup = function() {\r\n    s1.createCanvas(s1.width, 320);\r\n  };\r\n  s1.draw = function() {\r\n    s1.translate(s1.width / 2, s1.height / 2);\r\n    s1.background(200);\r\n    s1.rect(-50, -50, 100, 100);\r\n  \r\n  }\r\n})\r\n\r\n\r\n\r\n \r\n"}]}
 </script>
 <script type="module">
 window._ojs.paths.runtimeToDoc = "../..";

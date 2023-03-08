@@ -5,21 +5,103 @@ format:
         code-fold: true
 ---
 
+```{ojs}
+//| echo: false
+// aquí van los códigos de javascript necesarios para correr el libro.
+
+import {P5} from "@tmcw/p5"
+
+//P5 = require('https://unpkg.com/p5@1.2.0/lib/p5.js');
+
+function* p5(sketch) {
+  const element = DOM.element('div');
+  
+  yield element;
+  
+  const instance = new P5(sketch, element, true);
+  
+  try {
+    while (true) {
+      yield element;
+    }
+  } finally {
+    instance.remove();
+  }
+}
+
+```
+
 Veamos que tal esta cosita
 
 ```{ojs}
-//<script>
-import {p5} from "@tmcw/p5"
+//| echo: false
+//| 
+//import {p5} from "@tmcw/p5"
+require("p5")
 
-p5(sketch => {
-  let system;
-  sketch.setup = function() {
-    sketch.createCanvas(width, 320);
+class Wave {
+  constructor(p5, amp, freq, phase, res=500){
+    this.p5 = p5;
+    this.amp = amp;
+    this.freq = freq;
+    this.phase = phase;
+    this.res = res;
+  }
+  
+  createSliders(){
+    this.ampSlider = this.p5.createSlider(-200, 200, this.amp);
+    this.freqSlider = this.p5.createSlider(0.01, 20, this.freq);
+    this.phaseSlider = this.p5.createSlider(0, this.p5.TWO_PI, this.phase);
+    this.resSlider = this.p5.createSlider(1, 1500, this.res);
+  }
+  
+  evaluate(x, norm='norm'){
+      let width = this.p5.width;
+      return this.amp * this.p5.sin(this.s.TWO_PI * this.freq * x / width + this.phase);
+  }
+    
+  
+  draw(res=500, time=true){
+    this.p5.stroke(200);
+    this.p5.strokeWeight(4);
+    let y;
+    
+    this.amp = this.ampSlider.value();
+    this.freq = this.freqSlider.value();
+    this.phase = this.phaseSlider.value();
+    this.res = this.resSlider.value();
+    
+    for (let x = 0; x < this.p5.width; x+= this.p5.width/this.res){
+      if (time) {
+        y = this.evaluate(x - this.p5.frameCount * 2, 'norm');
+      } else {
+        y = this.evaluate(x, 'norm');
+      }
+      this.p5.point(x, y);
+    }
+  }
+  
+
+}
+```
+
+```{ojs}
+//<script>
+
+
+p5(s1 => {
+  s1.setup = function() {
+    s1.createCanvas(s1.width, 320);
   };
-  sketch.draw = function() {
-    sketch.translate(sketch.width / 2, sketch.height / 2);
-    sketch.background(200);
-    sketch.rect(-50, -50, 100, 100);
+  s1.draw = function() {
+    s1.translate(s1.width / 2, s1.height / 2);
+    s1.background(200);
+    s1.rect(-50, -50, 100, 100);
+  
   }
 })
+
+
+
+ 
 ```

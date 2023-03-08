@@ -142,6 +142,7 @@ Consideremos un **tono puro**. La ecuación que lo representa se muestra a conti
 $$y = A\sin(\omega t + \phi)$$
 
 En donde:
+
 * $y$ es la posición de la onda en un tiempo determinado.
 * $A$ es la amplitud de la onda.
 * $\omega$ es la velocidad angular de la oscilación. Se puede obtener conociendo la frecuencia de la onda, mediante $\omega = 2\pi f$.
@@ -229,7 +230,7 @@ con $$20\ \text{Hz} \leq f \leq 20\ \text{kHz}$$
   
   * Para el caso $f = 20$ Hz:
     $\lambda = \dfrac{c}{f} = \dfrac{344}{20} = 17.2$ m.
-  * Para el caso $f = 20$ kHz:
+* Para el caso $f = 20$ kHz:
     $\lambda = \dfrac{c}{f} = \dfrac{344}{20000} = 0.0172\ m = 1.72\ cm$.  
     
     Por lo tanto, el rango audible expresado en longitudes de onda es:

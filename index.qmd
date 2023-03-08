@@ -101,7 +101,7 @@ A partir de estas unidades, se pueden desarrollar teóricamente todas las unidad
 Acústica es la rama de la física que estudia los fenómenos asociados a la **generación**, **propagación** y **recepción** del sonido.
 
 
-El **sonido** es una perturbación producida en un medio elástico, como el *aire*. Aquellas perturbaciones suelen ser extremadamente pequeñas, pero alguna *suficientemente* grande será visible al ojo humano, como en el [siguiente caso (min 4:37)](https://www.youtube.com/watch?v=sv0tGx80yLk).
+El **sonido** es una perturbación producida en un medio elástico, como el *aire*. Aquellas perturbaciones suelen ser extremadamente pequeñas, pero alguna *suficientemente* grande será visible al ojo humano.
 
 La acústica al ser una rama de la física, interactúa constantemente con otras ramas, las que se nombran a continuación.
 
@@ -118,7 +118,7 @@ Los ejemplos de interacción entre estas tres ramas de la física más conocidos
 Entenderemos como **sonido** a aquellas pertubaciones en el aire (desde ahora **señales acústicas**) que pueden ser percibidas por el ser humano. El oído humano es capaz de escuchar las perturbaciones sonoras entre las 20 y las 20.000 oscilaciones por cada segundo (o Hz). Todo lo demás es imperceptible por el oído humano, siendo el rango inferior conocido como **infrasonido** y el superior como **ultrasonido**.
 
 
-**<center>Rangos de frecuencia</center>**
+<center>**Rangos de frecuencia**</center>
 
 | Menor a 20 Hz | Entre 20 Hz a 20 kHz | Mayor a 20 kHz |
 | ----------- | ----------- | ----------- | 

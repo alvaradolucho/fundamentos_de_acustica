@@ -35,8 +35,6 @@ Veamos que tal esta cosita
 
 ```{ojs}
 //| echo: false
-//| 
-//import {p5} from "@tmcw/p5"
 require("p5")
 
 class Wave {
@@ -57,7 +55,7 @@ class Wave {
   
   evaluate(x, norm='norm'){
       let width = this.p5.width;
-      return this.amp * this.p5.sin(this.s.TWO_PI * this.freq * x / width + this.phase);
+      return this.amp * this.p5.sin(this.p5.TWO_PI * this.freq * x / width + this.phase);
   }
     
   
@@ -86,22 +84,24 @@ class Wave {
 ```
 
 ```{ojs}
-//<script>
+//| echo: false
 
 
 p5(s1 => {
-  s1.setup = function() {
-    s1.createCanvas(s1.width, 320);
-  };
-  s1.draw = function() {
-    s1.translate(s1.width / 2, s1.height / 2);
-    s1.background(200);
-    s1.rect(-50, -50, 100, 100);
-  
-  }
-})
+    let wave;
 
+    s1.setup = function() {
+        s1.createCanvas(600, 400);
+        wave = new Wave(s1, 100, 10, 0, 1500);
+        // wave2 = new Wave(100, 2, 0, 1500);
+        wave.createSliders();
+    }
 
-
- 
+    s1.draw = function() {
+        s1.background(20);
+        s1.translate(0, s1.height/2);
+        wave.draw();
+    //wave2.draw();
+    }
+}) 
 ```

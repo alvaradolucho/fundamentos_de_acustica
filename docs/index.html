@@ -301,9 +301,29 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </tbody>
 </table>
 <p>A partir de estas unidades, se pueden desarrollar teóricamente todas las unidades derivadas, como centrímetros (cm), milímetros (mm), minutos (min), horas (hrs), días, años, milisegundos (ms), gramos (g), litros (lt), etc.</p>
+<details>
+<summary>
+Principios de la Dinámica
+</summary>
+</details></section>
+<section id="principios-de-la-dinámica" class="level2">
+<h2 class="anchored" data-anchor-id="principios-de-la-dinámica">Principios de la Dinámica</h2>
+<p>La posición de un cuerpo en un espacio se puede representar como en un <strong>vector</strong> en el espacio (para mayor simplicidad lo representaremos en un plano 2D). Si definimos un punto <span class="math inline">\(r\)</span> cuyas coordenadas <span class="math inline">\((r_x, r_y)\)</span> dependen del tiempo, entonces:</p>
+<p><span class="math display">\[\vec{r} = (r_x(t), r_y(t))\]</span></p>
+<p>Si el cuerpo cambia de posición, lo hace en un tiempo determinado, de modo que aquel cambio de posición respecto del tiempo es llamado <strong>velocidad</strong> y se define como:</p>
+<p><span class="math display">\[\vec{v}(r) = \dfrac{\Delta r}{\Delta t} = \dfrac{r_2 - r_1}{t_2 - t_1}\]</span></p>
+<p>Además es de mucho interés conocer cómo la velocidad varía con el tiempo. Por ejemplo un bus frenando posee velocidad pero ésta va decayendo con el tiempo, o bien, si el bus va acelerando, significa que tiene velocidad y además ésta va aumentando con el tiempo. Podemos expresar matemáticamente esto como:</p>
+<p><span class="math display">\[\vec{a} = \dfrac{\Delta v}{\Delta t}\]</span></p>
+<p>Dentro de las conclusiones de la física del movimiento, tenemos que:</p>
+<ul>
+<li>El signo de las componentes de los vectores muestran la dirección del vector.</li>
+<li>Si <span class="math inline">\(\vec{a}=\vec{0}\)</span> y <span class="math inline">\(\vec{v}\neq\vec{0}\)</span>, entonces el cuerpo está movíéndose en velocidad constante.</li>
+<li>Si <span class="math inline">\(\vec{a}=\vec{0}\)</span> y <span class="math inline">\(\vec{v} = \vec{0}\)</span>, entonces el cuerpo está en reposo (sin movimiento).</li>
+</ul>
+
 </section>
-<section id="acústica" class="level2">
-<h2 class="anchored" data-anchor-id="acústica">Acústica</h2>
+<section id="acústica" class="level1">
+<h1>Acústica</h1>
 <p>Acústica es la rama de la física que estudia los fenómenos asociados a la <strong>generación</strong>, <strong>propagación</strong> y <strong>recepción</strong> del sonido.</p>
 <p>El <strong>sonido</strong> es una perturbación producida en un medio elástico, como el <em>aire</em>. Aquellas perturbaciones suelen ser extremadamente pequeñas, pero alguna <em>suficientemente</em> grande será visible al ojo humano.</p>
 <p>La acústica al ser una rama de la física, interactúa constantemente con otras ramas, las que se nombran a continuación.</p>
@@ -377,26 +397,26 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div class="cell">
 <details>
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb4" data-startfrom="165" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 164;"><span id="cb4-165"><a href="#cb4-165" aria-hidden="true" tabindex="-1"></a><span class="co">//| echo: false</span></span>
-<span id="cb4-166"><a href="#cb4-166" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-167"><a href="#cb4-167" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-168"><a href="#cb4-168" aria-hidden="true" tabindex="-1"></a><span class="fu">p5</span>(s1 <span class="kw">=&gt;</span> {</span>
-<span id="cb4-169"><a href="#cb4-169" aria-hidden="true" tabindex="-1"></a>    <span class="kw">let</span> wave<span class="op">;</span></span>
-<span id="cb4-170"><a href="#cb4-170" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-171"><a href="#cb4-171" aria-hidden="true" tabindex="-1"></a>    s1<span class="op">.</span><span class="at">setup</span> <span class="op">=</span> <span class="kw">function</span>() {</span>
-<span id="cb4-172"><a href="#cb4-172" aria-hidden="true" tabindex="-1"></a>        s1<span class="op">.</span><span class="fu">createCanvas</span>(<span class="dv">600</span><span class="op">,</span> <span class="dv">400</span>)<span class="op">;</span></span>
-<span id="cb4-173"><a href="#cb4-173" aria-hidden="true" tabindex="-1"></a>        wave <span class="op">=</span> <span class="kw">new</span> <span class="fu">Wave</span>(s1<span class="op">,</span> <span class="dv">100</span><span class="op">,</span> <span class="dv">10</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">1500</span>)<span class="op">;</span></span>
-<span id="cb4-174"><a href="#cb4-174" aria-hidden="true" tabindex="-1"></a>        <span class="co">// wave2 = new Wave(100, 2, 0, 1500);</span></span>
-<span id="cb4-175"><a href="#cb4-175" aria-hidden="true" tabindex="-1"></a>        wave<span class="op">.</span><span class="fu">createSliders</span>()<span class="op">;</span></span>
-<span id="cb4-176"><a href="#cb4-176" aria-hidden="true" tabindex="-1"></a>    }</span>
-<span id="cb4-177"><a href="#cb4-177" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-178"><a href="#cb4-178" aria-hidden="true" tabindex="-1"></a>    s1<span class="op">.</span><span class="at">draw</span> <span class="op">=</span> <span class="kw">function</span>() {</span>
-<span id="cb4-179"><a href="#cb4-179" aria-hidden="true" tabindex="-1"></a>        s1<span class="op">.</span><span class="fu">background</span>(<span class="dv">20</span>)<span class="op">;</span></span>
-<span id="cb4-180"><a href="#cb4-180" aria-hidden="true" tabindex="-1"></a>        s1<span class="op">.</span><span class="fu">translate</span>(<span class="dv">0</span><span class="op">,</span> s1<span class="op">.</span><span class="at">height</span><span class="op">/</span><span class="dv">2</span>)<span class="op">;</span></span>
-<span id="cb4-181"><a href="#cb4-181" aria-hidden="true" tabindex="-1"></a>        wave<span class="op">.</span><span class="fu">draw</span>()<span class="op">;</span></span>
-<span id="cb4-182"><a href="#cb4-182" aria-hidden="true" tabindex="-1"></a>    <span class="co">//wave2.draw();</span></span>
-<span id="cb4-183"><a href="#cb4-183" aria-hidden="true" tabindex="-1"></a>    }</span>
-<span id="cb4-184"><a href="#cb4-184" aria-hidden="true" tabindex="-1"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4" data-startfrom="189" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 188;"><span id="cb4-189"><a href="#cb4-189" aria-hidden="true" tabindex="-1"></a><span class="co">//| echo: false</span></span>
+<span id="cb4-190"><a href="#cb4-190" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-191"><a href="#cb4-191" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-192"><a href="#cb4-192" aria-hidden="true" tabindex="-1"></a><span class="fu">p5</span>(s1 <span class="kw">=&gt;</span> {</span>
+<span id="cb4-193"><a href="#cb4-193" aria-hidden="true" tabindex="-1"></a>    <span class="kw">let</span> wave<span class="op">;</span></span>
+<span id="cb4-194"><a href="#cb4-194" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-195"><a href="#cb4-195" aria-hidden="true" tabindex="-1"></a>    s1<span class="op">.</span><span class="at">setup</span> <span class="op">=</span> <span class="kw">function</span>() {</span>
+<span id="cb4-196"><a href="#cb4-196" aria-hidden="true" tabindex="-1"></a>        s1<span class="op">.</span><span class="fu">createCanvas</span>(<span class="dv">600</span><span class="op">,</span> <span class="dv">400</span>)<span class="op">;</span></span>
+<span id="cb4-197"><a href="#cb4-197" aria-hidden="true" tabindex="-1"></a>        wave <span class="op">=</span> <span class="kw">new</span> <span class="fu">Wave</span>(s1<span class="op">,</span> <span class="dv">100</span><span class="op">,</span> <span class="dv">10</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">1500</span>)<span class="op">;</span></span>
+<span id="cb4-198"><a href="#cb4-198" aria-hidden="true" tabindex="-1"></a>        <span class="co">// wave2 = new Wave(100, 2, 0, 1500);</span></span>
+<span id="cb4-199"><a href="#cb4-199" aria-hidden="true" tabindex="-1"></a>        wave<span class="op">.</span><span class="fu">createSliders</span>()<span class="op">;</span></span>
+<span id="cb4-200"><a href="#cb4-200" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb4-201"><a href="#cb4-201" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-202"><a href="#cb4-202" aria-hidden="true" tabindex="-1"></a>    s1<span class="op">.</span><span class="at">draw</span> <span class="op">=</span> <span class="kw">function</span>() {</span>
+<span id="cb4-203"><a href="#cb4-203" aria-hidden="true" tabindex="-1"></a>        s1<span class="op">.</span><span class="fu">background</span>(<span class="dv">20</span>)<span class="op">;</span></span>
+<span id="cb4-204"><a href="#cb4-204" aria-hidden="true" tabindex="-1"></a>        s1<span class="op">.</span><span class="fu">translate</span>(<span class="dv">0</span><span class="op">,</span> s1<span class="op">.</span><span class="at">height</span><span class="op">/</span><span class="dv">2</span>)<span class="op">;</span></span>
+<span id="cb4-205"><a href="#cb4-205" aria-hidden="true" tabindex="-1"></a>        wave<span class="op">.</span><span class="fu">draw</span>()<span class="op">;</span></span>
+<span id="cb4-206"><a href="#cb4-206" aria-hidden="true" tabindex="-1"></a>    <span class="co">//wave2.draw();</span></span>
+<span id="cb4-207"><a href="#cb4-207" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb4-208"><a href="#cb4-208" aria-hidden="true" tabindex="-1"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display">
 <div id="ojs-cell-3" data-nodetype="expression">
@@ -406,8 +426,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 </section>
 </section>
-<section id="oscilaciones-en-el-tiempo-y-el-espacio" class="level2">
-<h2 class="anchored" data-anchor-id="oscilaciones-en-el-tiempo-y-el-espacio">Oscilaciones en el tiempo y el espacio</h2>
+<section id="oscilaciones-en-el-tiempo-y-el-espacio" class="level1">
+<h1>Oscilaciones en el tiempo y el espacio</h1>
 <p>Considere una cuerda fijada en ambos extremos, al ser esta cuerda excitada mediante una fuerza oscilatoria, podemos ver que se <strong>transmite una onda en el espacio y el tiempo</strong>.</p>
 <p><img src="https://media.springernature.com/lw685/springer-static/image/chp%3A10.1007%2F978-1-4614-0557-3_2/MediaObjects/214769_1_En_2_Fig7_HTML.gif" class="img-fluid"></p>
 <p>Es decir, tendremos una frecuencia temporal <span class="math inline">\(f\)</span> y una frecuencia espacial <span class="math inline">\(\nu\)</span>. Notar que en la imagen anterior se observa una frecuencia espacial.</p>
@@ -424,7 +444,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><span class="math inline">\(T\)</span> es análoga a <span class="math inline">\(\lambda\)</span>.</li>
 <li><span class="math inline">\(\omega\)</span> es análoga a <span class="math inline">\(k\)</span>.</li>
 </ul>
-</section>
 <section id="propagación-del-sonido" class="level2">
 <h2 class="anchored" data-anchor-id="propagación-del-sonido">Propagación del sonido</h2>
 <p>Para que haya sonido debe haber un medio elástico por donde se propague. Imaginémoslo como gotas que caen en medio del lago. Nuestro medio, como hemos dicho, es el aire, pero los principios que veremos en este curso servirán para todo medio elástico, sea aire, agua, aceite, etc.</p>
@@ -449,6 +468,7 @@ Mostrar/Ocultar solución
 </details>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

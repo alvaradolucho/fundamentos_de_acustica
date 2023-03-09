@@ -29,7 +29,7 @@ function* p5(sketch) {
     instance.remove();
   }
 }
-//
+//| echo: false
 ```
 
 
@@ -47,27 +47,41 @@ class Wave {
   }
   
   createSliders(){
-    this.ampSlider = this.p5.createSlider(-200, 200, this.amp);
-    this.freqSlider = this.p5.createSlider(0.01, 20, this.freq);
-    this.phaseSlider = this.p5.createSlider(0, this.p5.TWO_PI, this.phase);
-    this.resSlider = this.p5.createSlider(1, 1500, this.res);
+    this.p5.push()
+    this.ampSlider = this.p5.createSlider(-200, 200, this.amp, 0.5);
+    this.freqSlider = this.p5.createSlider(0.01, 20, this.freq, 0.1);
+    this.phaseSlider = this.p5.createSlider(0, this.p5.TWO_PI, this.phase, 0.1);
+    this.resSlider = this.p5.createSlider(1, 1500, this.res, 1);
+
+    //this.ampSlider.position(10, 10);
+    //this.freqSlider.position(100, 140);
+    //this.phaseSlider.position(100, 180);
+    //this.resSlider.position(100, 220);
+    this.p5.pop();
   }
   
   evaluate(x, norm='norm'){
       let width = this.p5.width;
-      return this.amp * this.p5.sin(this.p5.TWO_PI * this.freq * x / width + this.phase);
+      return -this.amp * this.p5.sin(this.p5.TWO_PI * this.freq * x / width + this.phase);
   }
     
   
-  draw(res=500, time=true){
+  draw(res=500, time=false){
     this.p5.stroke(200);
-    this.p5.strokeWeight(4);
+    //this.p5.fill();
+    //this.p5.fill();
+    this.p5.strokeWeight(3);
     let y;
     
     this.amp = this.ampSlider.value();
     this.freq = this.freqSlider.value();
     this.phase = this.phaseSlider.value();
     this.res = this.resSlider.value();
+    this.p5.text("Amplitud:  A = " + this.amp, 10, -180);
+    this.p5.text("frecuencia:  f = " + this.freq + ' Hz.', 10, -160);
+    this.p5.text("frecuencia radial: omega = " + this.p5.round(this.p5.TWO_PI * this.freq, 1) + ' rad/seg', 10, -140);
+    this.p5.text("fase: phi = " + this.phase + ' radianes.', 10, -120);
+    this.p5.text("resolución = " + this.res + ' muestras.', 400, -180);
     
     for (let x = 0; x < this.p5.width; x+= this.p5.width/this.res){
       if (time) {
@@ -177,7 +191,7 @@ p5(s1 => {
 
 Considere una cuerda fijada en ambos extremos, al ser esta cuerda excitada mediante una fuerza oscilatoria, podemos ver que se **transmite una onda en el espacio y  el tiempo**.
 
-![En esta imagen vemos una onda en el espacio](https://media.springernature.com/lw685/springer-static/image/chp%3A10.1007%2F978-1-4614-0557-3_2/MediaObjects/214769_1_En_2_Fig7_HTML.gif)
+![](https://media.springernature.com/lw685/springer-static/image/chp%3A10.1007%2F978-1-4614-0557-3_2/MediaObjects/214769_1_En_2_Fig7_HTML.gif)
 
 Es decir, tendremos una frecuencia temporal $f$ y una frecuencia espacial $\nu$. Notar que en la imagen anterior se observa una frecuencia espacial.
 

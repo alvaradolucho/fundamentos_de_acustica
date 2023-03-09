@@ -1,6 +1,12 @@
 project:
-  type: website
+  type: book
   output-dir: docs
 theme:
   light: flatly
   dark: darkly
+
+book:
+  title: "Fundamentos"
+  chapters:
+    - index.qmd
+  site-url: https://github.com/alvaradolucho/fundamentos_quarto

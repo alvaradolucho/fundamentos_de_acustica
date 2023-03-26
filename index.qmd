@@ -277,3 +277,15 @@ con $$20\ \text{Hz} \leq f \leq 20\ \text{kHz}$$
     $$1.7\ cm \leq \lambda \leq 17\ m$$
 </details>
 
+## Propagación del Sonido en Campo Libre
+
+Supongamos una **fuente sonora** que se encuentra en **campo libre**, es decir, que se encuentra suspendida en el aire a una distancia tal que no se enfrente a reflexiones sonoras. Asumamos a su vez, que esta fuente radía sonido a todas direcciones con igual intensidad (a esto le llamamos **fuente omnidireccional**). Vamos a necesitar algunos descriptores que nos permitan cuantificar la energía sonora, dependiendo de si estamos hablando de la fuente sonora, de algún punto en el espacio en que el sonido se propaga, y la energía que llega a los receptores. Los descriptores de indican a continuación:
+
+| Fuente sonora | Propagación en el medio | Receptor |
+| ----------- | ----------- | ----------- | 
+| Potencia acústica  | Intensidad Acústica | Presión sonora |
+| $W_A:\quad \left[W\right]$ | $I_A:\quad \left[\dfrac{W}{m^2}\right]$ | $p_A:\quad \left[\dfrac{N}{m^2}\right]$ |
+
+![](img/sec1/1_cuerda_guitarra.jpg)
+
+![](img/sec1/2_guitarra_camino_oido.jpg)

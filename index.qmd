@@ -211,7 +211,8 @@ p5(s1 => {
 }) 
 ```
 
-Además, el *sketch* interactivo a continuación le permitirá manipular y escuchar tonos puros y señales complejas tales como **ondas cuadradas, triangulares y dientes de sierra**.
+Además, [en este *sketch*](https://editor.p5js.org/alvaradolucho/sketches/qaIjMdcxe) le permitirá manipular y escuchar tonos puros y señales complejas tales como **ondas cuadradas, triangulares y dientes de sierra**.
+
 
 ## Oscilaciones en el tiempo y el espacio
 

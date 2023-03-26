@@ -6,7 +6,7 @@ theme:
   dark: darkly
 
 book:
-  title: "Fundamentos"
+  title: "Fundamentos de Acústica"
   chapters:
     - index.qmd
   site-url: https://github.com/alvaradolucho/fundamentos_quarto

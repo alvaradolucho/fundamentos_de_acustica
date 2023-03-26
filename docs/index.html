@@ -176,16 +176,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#principios-físicos" id="toc-principios-físicos" class="nav-link active" data-scroll-target="#principios-físicos"><span class="toc-section-number">0.1</span>  Principios Físicos</a></li>
-  <li><a href="#principios-de-la-dinámica" id="toc-principios-de-la-dinámica" class="nav-link" data-scroll-target="#principios-de-la-dinámica"><span class="toc-section-number">0.2</span>  Principios de la Dinámica</a></li>
-  <li><a href="#acústica" id="toc-acústica" class="nav-link" data-scroll-target="#acústica"><span class="toc-section-number">1</span>  Acústica</a>
+  <li><a href="#principios-físicos" id="toc-principios-físicos" class="nav-link active" data-scroll-target="#principios-físicos"><span class="toc-section-number">1</span>  Principios Físicos</a></li>
+  <li><a href="#acústica" id="toc-acústica" class="nav-link" data-scroll-target="#acústica"><span class="toc-section-number">2</span>  Acústica</a>
   <ul class="collapse">
-  <li><a href="#sonido" id="toc-sonido" class="nav-link" data-scroll-target="#sonido"><span class="toc-section-number">1.0.1</span>  Sonido</a></li>
-  <li><a href="#elementos-del-sonido" id="toc-elementos-del-sonido" class="nav-link" data-scroll-target="#elementos-del-sonido"><span class="toc-section-number">1.0.2</span>  Elementos del sonido</a></li>
-  </ul></li>
-  <li><a href="#oscilaciones-en-el-tiempo-y-el-espacio" id="toc-oscilaciones-en-el-tiempo-y-el-espacio" class="nav-link" data-scroll-target="#oscilaciones-en-el-tiempo-y-el-espacio"><span class="toc-section-number">2</span>  Oscilaciones en el tiempo y el espacio</a>
-  <ul class="collapse">
-  <li><a href="#propagación-del-sonido" id="toc-propagación-del-sonido" class="nav-link" data-scroll-target="#propagación-del-sonido"><span class="toc-section-number">2.1</span>  Propagación del sonido</a></li>
+  <li><a href="#sonido" id="toc-sonido" class="nav-link" data-scroll-target="#sonido"><span class="toc-section-number">2.1</span>  Sonido</a></li>
+  <li><a href="#elementos-del-sonido" id="toc-elementos-del-sonido" class="nav-link" data-scroll-target="#elementos-del-sonido"><span class="toc-section-number">2.2</span>  Elementos del sonido</a></li>
+  <li><a href="#oscilaciones-en-el-tiempo-y-el-espacio" id="toc-oscilaciones-en-el-tiempo-y-el-espacio" class="nav-link" data-scroll-target="#oscilaciones-en-el-tiempo-y-el-espacio"><span class="toc-section-number">2.3</span>  Oscilaciones en el tiempo y el espacio</a></li>
+  <li><a href="#propagación-del-sonido" id="toc-propagación-del-sonido" class="nav-link" data-scroll-target="#propagación-del-sonido"><span class="toc-section-number">2.4</span>  Propagación del sonido</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -329,8 +326,8 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 </div>
 </div>
-<section id="principios-físicos" class="level2" data-number="0.1">
-<h2 data-number="0.1" class="anchored" data-anchor-id="principios-físicos"><span class="header-section-number">0.1</span> Principios Físicos</h2>
+<section id="principios-físicos" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Principios Físicos</h1>
 <p>En la física exploramos desde lo más pequeño hasta lo más grande. Desde una fracción pequeña de un protón hasta el universo mismo, contemplando aproximadamente 45 órdenes de magnitud. Para expresar las mediciones cuantitativamente, necesitamos introducir las <strong>unidades de medida</strong>. Las unidades fundamentales de la física son: <strong>longitud</strong>, <strong>tiempo</strong> y <strong>masa</strong>.</p>
 <table class="table">
 <thead>
@@ -353,30 +350,36 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </tr>
 </tbody>
 </table>
-<p>A partir de estas unidades, se pueden desarrollar teóricamente todas las unidades derivadas, como centrímetros (cm), milímetros (mm), minutos (min), horas (hrs), días, años, milisegundos (ms), gramos (g), litros (lt), etc.</p>
+<p>A partir de estas unidades, se pueden desarrollar teóricamente todas las unidades derivadas, como centrímetros (cm), milímetros (mm), minutos (min), horas (hrs), días, años, milisegundos (ms), gramos (g), litros (lt), etc. <!--
 <details>
-<summary>
-Principios de la Dinámica
-</summary>
-</details></section>
-<section id="principios-de-la-dinámica" class="level2" data-number="0.2">
-<h2 data-number="0.2" class="anchored" data-anchor-id="principios-de-la-dinámica"><span class="header-section-number">0.2</span> Principios de la Dinámica</h2>
-<p>La posición de un cuerpo en un espacio se puede representar como en un <strong>vector</strong> en el espacio (para mayor simplicidad lo representaremos en un plano 2D). Si definimos un punto <span class="math inline">\(r\)</span> cuyas coordenadas <span class="math inline">\((r_x, r_y)\)</span> dependen del tiempo, entonces:</p>
-<p><span class="math display">\[\vec{r} = (r_x(t), r_y(t))\]</span></p>
-<p>Si el cuerpo cambia de posición, lo hace en un tiempo determinado, de modo que aquel cambio de posición respecto del tiempo es llamado <strong>velocidad</strong> y se define como:</p>
-<p><span class="math display">\[\vec{v}(r) = \dfrac{\Delta r}{\Delta t} = \dfrac{r_2 - r_1}{t_2 - t_1}\]</span></p>
-<p>Además es de mucho interés conocer cómo la velocidad varía con el tiempo. Por ejemplo un bus frenando posee velocidad pero ésta va decayendo con el tiempo, o bien, si el bus va acelerando, significa que tiene velocidad y además ésta va aumentando con el tiempo. Podemos expresar matemáticamente esto como:</p>
-<p><span class="math display">\[\vec{a} = \dfrac{\Delta v}{\Delta t}\]</span></p>
-<p>Dentro de las conclusiones de la física del movimiento, tenemos que:</p>
-<ul>
-<li>El signo de las componentes de los vectores muestran la dirección del vector.</li>
-<li>Si <span class="math inline">\(\vec{a}=\vec{0}\)</span> y <span class="math inline">\(\vec{v}\neq\vec{0}\)</span>, entonces el cuerpo está movíéndose en velocidad constante.</li>
-<li>Si <span class="math inline">\(\vec{a}=\vec{0}\)</span> y <span class="math inline">\(\vec{v} = \vec{0}\)</span>, entonces el cuerpo está en reposo (sin movimiento).</li>
-</ul>
+<summary>Principios de la Dinámica</summary>
 
+
+## Principios de la Dinámica
+
+La posición de un cuerpo en un espacio se puede representar como en un **vector** en el espacio (para mayor simplicidad lo representaremos en un plano 2D). Si definimos un punto $r$ cuyas coordenadas $(r_x, r_y)$ dependen del tiempo, entonces:
+
+$$\vec{r} = (r_x(t), r_y(t))$$
+
+Si el cuerpo cambia de posición, lo hace en un tiempo determinado, de modo que aquel cambio de posición respecto del tiempo es llamado **velocidad** y se define como:
+
+$$\vec{v}(r) = \dfrac{\Delta r}{\Delta t} = \dfrac{r_2 - r_1}{t_2 - t_1}$$
+
+Además es de mucho interés conocer cómo la velocidad varía con el tiempo. Por ejemplo un bus frenando posee velocidad pero ésta va decayendo con el tiempo, o bien, si el bus va acelerando, significa que tiene velocidad y además ésta va aumentando con el tiempo. Podemos expresar matemáticamente esto como:
+
+$$\vec{a} = \dfrac{\Delta v}{\Delta t}$$
+
+Dentro de las conclusiones de la física del movimiento, tenemos que:
+
+* El signo de las componentes de los vectores muestran la dirección del vector.
+* Si $\vec{a}=\vec{0}$ y $\vec{v}\neq\vec{0}$, entonces el cuerpo está movíéndose en velocidad constante. 
+* Si $\vec{a}=\vec{0}$ y $\vec{v} = \vec{0}$, entonces el cuerpo está en reposo (sin movimiento).
+
+</details>
+--></p>
 </section>
-<section id="acústica" class="level1" data-number="1">
-<h1 data-number="1"><span class="header-section-number">1</span> Acústica</h1>
+<section id="acústica" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Acústica</h1>
 <p>Acústica es la rama de la física que estudia los fenómenos asociados a la <strong>generación</strong>, <strong>propagación</strong> y <strong>recepción</strong> del sonido.</p>
 <p>El <strong>sonido</strong> es una perturbación producida en un medio elástico, como el <em>aire</em>. Aquellas perturbaciones suelen ser extremadamente pequeñas, pero alguna <em>suficientemente</em> grande será visible al ojo humano.</p>
 <p>La acústica al ser una rama de la física, interactúa constantemente con otras ramas, las que se nombran a continuación.</p>
@@ -403,8 +406,8 @@ Principios de la Dinámica
 </tbody>
 </table>
 <p>Los ejemplos de interacción entre estas tres ramas de la física más conocidos son los <strong>micrófonos</strong> y <strong>altavoces</strong>.</p>
-<section id="sonido" class="level3" data-number="1.0.1">
-<h3 data-number="1.0.1" class="anchored" data-anchor-id="sonido"><span class="header-section-number">1.0.1</span> Sonido</h3>
+<section id="sonido" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="sonido"><span class="header-section-number">2.1</span> Sonido</h2>
 <p>Entenderemos como <strong>sonido</strong> a aquellas pertubaciones en el aire (desde ahora <strong>señales acústicas</strong>) que pueden ser percibidas por el ser humano. El oído humano es capaz de escuchar las perturbaciones sonoras entre las 20 y las 20.000 oscilaciones por cada segundo (o Hz). Todo lo demás es imperceptible por el oído humano, siendo el rango inferior conocido como <strong>infrasonido</strong> y el superior como <strong>ultrasonido</strong>.</p>
 <center>
 <strong>Rangos de frecuencia</strong>
@@ -426,8 +429,8 @@ Principios de la Dinámica
 </tbody>
 </table>
 </section>
-<section id="elementos-del-sonido" class="level3" data-number="1.0.2">
-<h3 data-number="1.0.2" class="anchored" data-anchor-id="elementos-del-sonido"><span class="header-section-number">1.0.2</span> Elementos del sonido</h3>
+<section id="elementos-del-sonido" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="elementos-del-sonido"><span class="header-section-number">2.2</span> Elementos del sonido</h2>
 <p>Actualmente se reconocen cinco elementos del sonido: <strong>amplitud</strong>, <strong>frecuencia</strong>, <strong>timbre</strong>, <strong>duración</strong> y <strong>ataque</strong>.</p>
 <ul>
 <li><strong>Amplitud:</strong> Se refiere al tamaño de la onda y está relacionado con la intensidad sonora, o dicho de otra forma: <strong>sonoridad</strong> (<em>loudness</em>).</li>
@@ -448,16 +451,13 @@ Principios de la Dinámica
 </ul>
 <p>La gráfica interactiva a continuación nos muestra la forma de este tono puro.</p>
 <div class="cell">
-<details>
+<details class="hidden">
 <summary>Code</summary>
-<div class="sourceCode cell-code" id="cb4" data-startfrom="189" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 188;"><span id="cb4-189"><a href="#cb4-189" aria-hidden="true" tabindex="-1"></a><span class="co">//| echo: false</span></span>
-<span id="cb4-190"><a href="#cb4-190" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-191"><a href="#cb4-191" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-192"><a href="#cb4-192" aria-hidden="true" tabindex="-1"></a><span class="fu">p5</span>(s1 <span class="kw">=&gt;</span> {</span>
+<div class="sourceCode cell-code hidden" id="cb4" data-startfrom="192" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 191;"><span id="cb4-192"><a href="#cb4-192" aria-hidden="true" tabindex="-1"></a><span class="fu">p5</span>(s1 <span class="kw">=&gt;</span> {</span>
 <span id="cb4-193"><a href="#cb4-193" aria-hidden="true" tabindex="-1"></a>    <span class="kw">let</span> wave<span class="op">;</span></span>
 <span id="cb4-194"><a href="#cb4-194" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb4-195"><a href="#cb4-195" aria-hidden="true" tabindex="-1"></a>    s1<span class="op">.</span><span class="at">setup</span> <span class="op">=</span> <span class="kw">function</span>() {</span>
-<span id="cb4-196"><a href="#cb4-196" aria-hidden="true" tabindex="-1"></a>        s1<span class="op">.</span><span class="fu">createCanvas</span>(<span class="dv">600</span><span class="op">,</span> <span class="dv">400</span>)<span class="op">;</span></span>
+<span id="cb4-196"><a href="#cb4-196" aria-hidden="true" tabindex="-1"></a>        s1<span class="op">.</span><span class="fu">createCanvas</span>(<span class="dv">800</span><span class="op">,</span> <span class="dv">400</span>)<span class="op">;</span></span>
 <span id="cb4-197"><a href="#cb4-197" aria-hidden="true" tabindex="-1"></a>        wave <span class="op">=</span> <span class="kw">new</span> <span class="fu">Wave</span>(s1<span class="op">,</span> <span class="dv">100</span><span class="op">,</span> <span class="dv">10</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">1500</span>)<span class="op">;</span></span>
 <span id="cb4-198"><a href="#cb4-198" aria-hidden="true" tabindex="-1"></a>        <span class="co">// wave2 = new Wave(100, 2, 0, 1500);</span></span>
 <span id="cb4-199"><a href="#cb4-199" aria-hidden="true" tabindex="-1"></a>        wave<span class="op">.</span><span class="fu">createSliders</span>()<span class="op">;</span></span>
@@ -477,28 +477,29 @@ Principios de la Dinámica
 </div>
 </div>
 </div>
+<p>Además, el <em>sketch</em> interactivo a continuación le permitirá manipular y escuchar tonos puros y señales complejas tales como <strong>ondas cuadradas, triangulares y dientes de sierra</strong>.</p>
 </section>
-</section>
-<section id="oscilaciones-en-el-tiempo-y-el-espacio" class="level1" data-number="2">
-<h1 data-number="2"><span class="header-section-number">2</span> Oscilaciones en el tiempo y el espacio</h1>
+<section id="oscilaciones-en-el-tiempo-y-el-espacio" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="oscilaciones-en-el-tiempo-y-el-espacio"><span class="header-section-number">2.3</span> Oscilaciones en el tiempo y el espacio</h2>
 <p>Considere una cuerda fijada en ambos extremos, al ser esta cuerda excitada mediante una fuerza oscilatoria, podemos ver que se <strong>transmite una onda en el espacio y el tiempo</strong>.</p>
 <p><img src="https://media.springernature.com/lw685/springer-static/image/chp%3A10.1007%2F978-1-4614-0557-3_2/MediaObjects/214769_1_En_2_Fig7_HTML.gif" class="img-fluid"></p>
 <p>Es decir, tendremos una frecuencia temporal <span class="math inline">\(f\)</span> y una frecuencia espacial <span class="math inline">\(\nu\)</span>. Notar que en la imagen anterior se observa una frecuencia espacial.</p>
-<p>En el espacio podemos medir la longitud de onda <span class="math inline">\(\lambda: [m]\)</span> y con ello obtener su frecuencia espacial: <span class="math display">\[\nu = \dfrac{1}{\lambda} \qquad\left[\dfrac{1}{m}\right]\]</span></p>
+<p>En el espacio podemos medir la longitud de onda <span class="math inline">\(\lambda: [m]\)</span> y con ello obtener su frecuencia espacial: <span class="math display">\[\nu = \dfrac{1}{\lambda} \qquad\left[\dfrac{\text{ciclos}}{m}\right]\]</span></p>
 <p>Además, podemos conocer el número de ciclos por cada unidad de distancia.</p>
-<p><span class="math display">\[k = \dfrac{2\pi}{\lambda}\qquad \left[\dfrac{\text{ciclos}}{m}\right]\]</span></p>
+<p><span class="math display">\[k = \dfrac{2\pi}{\lambda}\qquad \left[\dfrac{\text{radianes}}{m}\right]\]</span></p>
 <p>En el tiempo, podemos medir el período de oscilación <span class="math inline">\(T: [s]\)</span>, con la cual podemos obtener la frecuencia <span class="math inline">\(f\)</span>:</p>
-<p><span class="math display">\[f = \dfrac{1}{T}\qquad \left[\frac{1}{s}\right] = \left[\text{Hz}\right]\]</span></p>
+<p><span class="math display">\[f = \dfrac{1}{T}\qquad \left[\frac{\text{ciclos}}{s}\right] = \left[\text{Hz}\right]\]</span></p>
 <p>Con ello, podemos obtener la frecuencia circular de oscilación <span class="math inline">\(\omega\)</span>, que puede obtenerse mediante:</p>
-<p><span class="math display">\[\omega = 2\pi f = \dfrac{2\pi}{T}\]</span></p>
+<p><span class="math display">\[\omega = 2\pi f = \dfrac{2\pi}{T}\qquad \left[\dfrac{\text{radianes}}{s} \right]\]</span></p>
 <p>Es importante reconocer las similaridades en los casos espacial y temporal:</p>
 <ul>
 <li><span class="math inline">\(f\)</span> es análoga a <span class="math inline">\(\nu\)</span>.</li>
 <li><span class="math inline">\(T\)</span> es análoga a <span class="math inline">\(\lambda\)</span>.</li>
 <li><span class="math inline">\(\omega\)</span> es análoga a <span class="math inline">\(k\)</span>.</li>
 </ul>
-<section id="propagación-del-sonido" class="level2" data-number="2.1">
-<h2 data-number="2.1" class="anchored" data-anchor-id="propagación-del-sonido"><span class="header-section-number">2.1</span> Propagación del sonido</h2>
+</section>
+<section id="propagación-del-sonido" class="level2" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="propagación-del-sonido"><span class="header-section-number">2.4</span> Propagación del sonido</h2>
 <p>Para que haya sonido debe haber un medio elástico por donde se propague. Imaginémoslo como gotas que caen en medio del lago. Nuestro medio, como hemos dicho, es el aire, pero los principios que veremos en este curso servirán para todo medio elástico, sea aire, agua, aceite, etc.</p>
 <p>Considerando una temperatura estándar de 20°C, dos constantes del medio aire nos serán de gran utilidad para el resto del curso.</p>
 <ol type="1">
@@ -526,7 +527,7 @@ Mostrar/Ocultar solución
 
 </main> <!-- /main -->
 <script type="ojs-module-contents">
-{"contents":[{"methodName":"interpret","cellName":"ojs-cell-1","inline":false,"source":"// aquí van los códigos de javascript necesarios para correr el libro.\r\n\r\nimport {P5} from \"@tmcw/p5\"\r\n\r\n//P5 = require('https://unpkg.com/p5@1.2.0/lib/p5.js');\r\n\r\nfunction* p5(sketch) {\r\n  const element = DOM.element('div');\r\n  \r\n  yield element;\r\n  \r\n  const instance = new P5(sketch, element, true);\r\n  \r\n  try {\r\n    while (true) {\r\n      yield element;\r\n    }\r\n  } finally {\r\n    instance.remove();\r\n  }\r\n}\r\n//| echo: false\r\n"},{"methodName":"interpret","cellName":"ojs-cell-2","inline":false,"source":"require(\"p5\")\r\n\r\nclass Wave {\r\n  constructor(p5, amp, freq, phase, res=500){\r\n    this.p5 = p5;\r\n    this.amp = amp;\r\n    this.freq = freq;\r\n    this.phase = phase;\r\n    this.res = res;\r\n  }\r\n  \r\n  createSliders(){\r\n    this.p5.push()\r\n    this.ampSlider = this.p5.createSlider(-200, 200, this.amp, 0.5);\r\n    this.freqSlider = this.p5.createSlider(0.01, 20, this.freq, 0.1);\r\n    this.phaseSlider = this.p5.createSlider(0, this.p5.TWO_PI, this.phase, 0.1);\r\n    this.resSlider = this.p5.createSlider(1, 1500, this.res, 1);\r\n\r\n    //this.ampSlider.position(10, 10);\r\n    //this.freqSlider.position(100, 140);\r\n    //this.phaseSlider.position(100, 180);\r\n    //this.resSlider.position(100, 220);\r\n    this.p5.pop();\r\n  }\r\n  \r\n  evaluate(x, norm='norm'){\r\n      let width = this.p5.width;\r\n      return -this.amp * this.p5.sin(this.p5.TWO_PI * this.freq * x / width + this.phase);\r\n  }\r\n    \r\n  \r\n  draw(res=500, time=false){\r\n    this.p5.stroke(200);\r\n    //this.p5.fill();\r\n    //this.p5.fill();\r\n    this.p5.strokeWeight(3);\r\n    let y;\r\n    \r\n    this.amp = this.ampSlider.value();\r\n    this.freq = this.freqSlider.value();\r\n    this.phase = this.phaseSlider.value();\r\n    this.res = this.resSlider.value();\r\n    this.p5.text(\"Amplitud:  A = \" + this.amp, 10, -180);\r\n    this.p5.text(\"frecuencia:  f = \" + this.freq + ' Hz.', 10, -160);\r\n    this.p5.text(\"frecuencia radial: omega = \" + this.p5.round(this.p5.TWO_PI * this.freq, 1) + ' rad/seg', 10, -140);\r\n    this.p5.text(\"fase: phi = \" + this.phase + ' radianes.', 10, -120);\r\n    this.p5.text(\"resolución = \" + this.res + ' muestras.', 400, -180);\r\n    \r\n    for (let x = 0; x < this.p5.width; x+= this.p5.width/this.res){\r\n      if (time) {\r\n        y = this.evaluate(x - this.p5.frameCount * 2, 'norm');\r\n      } else {\r\n        y = this.evaluate(x, 'norm');\r\n      }\r\n      this.p5.point(x, y);\r\n    }\r\n  }\r\n  \r\n\r\n}\r\n//\r\n"},{"methodName":"interpret","cellName":"ojs-cell-3","inline":false,"source":"\r\n\r\n//| echo: false\r\n\r\n\r\np5(s1 => {\r\n    let wave;\r\n\r\n    s1.setup = function() {\r\n        s1.createCanvas(600, 400);\r\n        wave = new Wave(s1, 100, 10, 0, 1500);\r\n        // wave2 = new Wave(100, 2, 0, 1500);\r\n        wave.createSliders();\r\n    }\r\n\r\n    s1.draw = function() {\r\n        s1.background(20);\r\n        s1.translate(0, s1.height/2);\r\n        wave.draw();\r\n    //wave2.draw();\r\n    }\r\n}) \r\n"}]}
+{"contents":[{"methodName":"interpret","cellName":"ojs-cell-1","inline":false,"source":"// aquí van los códigos de javascript necesarios para correr el libro.\r\n\r\nimport {P5} from \"@tmcw/p5\"\r\n\r\n//P5 = require('https://unpkg.com/p5@1.2.0/lib/p5.js');\r\n\r\nfunction* p5(sketch) {\r\n  const element = DOM.element('div');\r\n  \r\n  yield element;\r\n  \r\n  const instance = new P5(sketch, element, true);\r\n  \r\n  try {\r\n    while (true) {\r\n      yield element;\r\n    }\r\n  } finally {\r\n    instance.remove();\r\n  }\r\n}\r\n//| echo: false\r\n"},{"methodName":"interpret","cellName":"ojs-cell-2","inline":false,"source":"require(\"p5\")\r\n\r\nclass Wave {\r\n  constructor(p5, amp, freq, phase, res=500){\r\n    this.p5 = p5;\r\n    this.amp = amp;\r\n    this.freq = freq;\r\n    this.phase = phase;\r\n    this.res = res;\r\n  }\r\n  \r\n  createSliders(){\r\n    this.p5.push()\r\n    this.ampSlider = this.p5.createSlider(-200, 200, this.amp, 0.5);\r\n    this.freqSlider = this.p5.createSlider(0.01, 20, this.freq, 0.1);\r\n    this.phaseSlider = this.p5.createSlider(0, this.p5.TWO_PI, this.phase, 0.1);\r\n    this.resSlider = this.p5.createSlider(1, 1500, this.res, 1);\r\n\r\n    //this.ampSlider.position(10, 10);\r\n    //this.freqSlider.position(100, 140);\r\n    //this.phaseSlider.position(100, 180);\r\n    //this.resSlider.position(100, 220);\r\n    this.p5.pop();\r\n  }\r\n  \r\n  evaluate(x, norm='norm'){\r\n      let width = this.p5.width;\r\n      return -this.amp * this.p5.sin(this.p5.TWO_PI * this.freq * x / width + this.phase);\r\n  }\r\n    \r\n  \r\n  draw(res=500, time=false){\r\n    this.p5.stroke(200);\r\n    //this.p5.fill();\r\n    //this.p5.fill();\r\n    this.p5.strokeWeight(3);\r\n    let y;\r\n    \r\n    this.amp = this.ampSlider.value();\r\n    this.freq = this.freqSlider.value();\r\n    this.phase = this.phaseSlider.value();\r\n    this.res = this.resSlider.value();\r\n    this.p5.text(\"Amplitud:  A = \" + this.amp, 10, -180);\r\n    this.p5.text(\"frecuencia:  f = \" + this.freq + ' Hz.', 10, -160);\r\n    this.p5.text(\"frecuencia radial: omega = \" + this.p5.round(this.p5.TWO_PI * this.freq, 1) + ' rad/seg', 10, -140);\r\n    this.p5.text(\"fase: phi = \" + this.phase + ' radianes.', 10, -120);\r\n    this.p5.text(\"resolución = \" + this.res + ' muestras.', 400, -180);\r\n    \r\n    for (let x = 0; x < this.p5.width; x+= this.p5.width/this.res){\r\n      if (time) {\r\n        y = this.evaluate(x - this.p5.frameCount * 2, 'norm');\r\n      } else {\r\n        y = this.evaluate(x, 'norm');\r\n      }\r\n      this.p5.point(x, y);\r\n    }\r\n  }\r\n  \r\n\r\n}\r\n//\r\n"},{"methodName":"interpret","cellName":"ojs-cell-3","inline":false,"source":"\r\n\r\np5(s1 => {\r\n    let wave;\r\n\r\n    s1.setup = function() {\r\n        s1.createCanvas(800, 400);\r\n        wave = new Wave(s1, 100, 10, 0, 1500);\r\n        // wave2 = new Wave(100, 2, 0, 1500);\r\n        wave.createSliders();\r\n    }\r\n\r\n    s1.draw = function() {\r\n        s1.background(20);\r\n        s1.translate(0, s1.height/2);\r\n        wave.draw();\r\n    //wave2.draw();\r\n    }\r\n}) \r\n"}]}
 </script>
 <script type="module">
 window._ojs.paths.runtimeToDoc = "../..";

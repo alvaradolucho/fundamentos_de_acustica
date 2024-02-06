@@ -19,7 +19,7 @@ Ing. Civil Acústico UACh
 
 ## Contenidos
 
-### I - Fundamentos del Sonido
+### I - Elementos del Sonido
 Por definir.
 
 ### II - Audición Humana

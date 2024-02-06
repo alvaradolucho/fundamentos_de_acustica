@@ -1,12 +1,30 @@
 project:
   type: website
   output-dir: docs
+
 theme:
   light: flatly
   dark: darkly
 
-book:
+website:
+  page-navigation: true
   title: "Fundamentos de Acústica"
-  chapters:
-    - index.qmd
-  site-url: https://github.com/alvaradolucho/fundamentos_de_acustica
+  
+  sidebar:      
+    - title: "Fundamentos de Acústica"
+      style: "docked"
+      contents:
+        - section: "Inicio"
+          contents:
+            - index.qmd
+        - section: "Unidad 1 - Elementos del Sonido"
+          contents:
+            - sections/unidad1/principios-fisicos.qmd
+            - sections/unidad1/unidad1.qmd
+    
+format:
+    html:
+        code-fold: true
+        theme: darkly
+      
+site-url: https://github.com/alvaradolucho/fundamentos_de_acustica

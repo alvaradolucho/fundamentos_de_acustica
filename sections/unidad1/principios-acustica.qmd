@@ -1,5 +1,5 @@
 ---
-title: "Unidad I - Elementos del Sonido"
+title: "Principios de la Acústica"
 ---
 
 ```{ojs}

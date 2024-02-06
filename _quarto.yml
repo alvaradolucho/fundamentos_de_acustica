@@ -8,19 +8,26 @@ theme:
 
 website:
   page-navigation: true
+  reader-mode: true
   title: "Fundamentos de Acústica"
-  
+  search:
+    location: sidebar
+    type: overlay
+  # navbar:
+  #  background: dark
   sidebar:      
     - title: "Fundamentos de Acústica"
+      background: dark
       style: "docked"
       contents:
+        - text: "---"
         - section: "Inicio"
           contents:
             - index.qmd
         - section: "Unidad 1 - Elementos del Sonido"
           contents:
             - sections/unidad1/principios-fisicos.qmd
-            - sections/unidad1/unidad1.qmd
+            - sections/unidad1/principios-acustica.qmd
     
 format:
     html:

@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.335">
+<meta name="generator" content="quarto-1.4.549">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -17,11 +17,12 @@ div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
-  margin: 0 0.8em 0.2em -1.6em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -46,43 +47,13 @@ pre.numberSource code > span > a:first-child::before
     -khtml-user-select: none; -moz-user-select: none;
     -ms-user-select: none; user-select: none;
     padding: 0 4px; width: 4em;
-    color: #aaaaaa;
   }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
 div.sourceCode
   {   }
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { color: #008000; } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { color: #008000; font-weight: bold; } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
 </style>
 
 
@@ -110,7 +81,13 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   "collapse-after": 3,
   "panel-placement": "start",
   "type": "textbox",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -119,14 +96,44 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit"
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script>
 <script type="module" src="site_libs/quarto-ojs/quarto-ojs-runtime.js"></script>
 <link href="site_libs/quarto-ojs/quarto-ojs.css" rel="stylesheet">
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -134,11 +141,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-    <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">Fundamentos de Acústica</h1>
-      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
-        <i class="bi bi-chevron-right"></i>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Fundamentos de Acústica</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
       </button>
     </div>
   </nav>
@@ -146,44 +158,46 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Fundamentos de Acústica</a> 
         <div class="sidebar-tools-main">
-  <a href="" class="quarto-color-scheme-toggle sidebar-tool" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+  <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
     </div>
       </div>
-      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
         <div id="quarto-search" class="" title="Search"></div>
         </div>
-      </div>
+        </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Fundamentos de Acústica</span></a>
+  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Fundamentos de Acústica</span></span></a>
   </div>
 </li>
     </ul>
     </div>
 </nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#principios-físicos" id="toc-principios-físicos" class="nav-link active" data-scroll-target="#principios-físicos"><span class="toc-section-number">1</span>  Principios Físicos</a></li>
-  <li><a href="#acústica" id="toc-acústica" class="nav-link" data-scroll-target="#acústica"><span class="toc-section-number">2</span>  Acústica</a>
+  <li><a href="#principios-físicos" id="toc-principios-físicos" class="nav-link active" data-scroll-target="#principios-físicos"><span class="header-section-number">1</span> Principios Físicos</a></li>
+  <li><a href="#acústica" id="toc-acústica" class="nav-link" data-scroll-target="#acústica"><span class="header-section-number">2</span> Acústica</a>
   <ul class="collapse">
-  <li><a href="#sonido" id="toc-sonido" class="nav-link" data-scroll-target="#sonido"><span class="toc-section-number">2.1</span>  Sonido</a></li>
-  <li><a href="#elementos-del-sonido" id="toc-elementos-del-sonido" class="nav-link" data-scroll-target="#elementos-del-sonido"><span class="toc-section-number">2.2</span>  Elementos del sonido</a></li>
-  <li><a href="#oscilaciones-en-el-tiempo-y-el-espacio" id="toc-oscilaciones-en-el-tiempo-y-el-espacio" class="nav-link" data-scroll-target="#oscilaciones-en-el-tiempo-y-el-espacio"><span class="toc-section-number">2.3</span>  Oscilaciones en el tiempo y el espacio</a></li>
-  <li><a href="#propagación-del-sonido" id="toc-propagación-del-sonido" class="nav-link" data-scroll-target="#propagación-del-sonido"><span class="toc-section-number">2.4</span>  Propagación del sonido</a></li>
-  <li><a href="#propagación-del-sonido-en-campo-libre" id="toc-propagación-del-sonido-en-campo-libre" class="nav-link" data-scroll-target="#propagación-del-sonido-en-campo-libre"><span class="toc-section-number">2.5</span>  Propagación del Sonido en Campo Libre</a></li>
+  <li><a href="#sonido" id="toc-sonido" class="nav-link" data-scroll-target="#sonido"><span class="header-section-number">2.1</span> Sonido</a></li>
+  <li><a href="#elementos-del-sonido" id="toc-elementos-del-sonido" class="nav-link" data-scroll-target="#elementos-del-sonido"><span class="header-section-number">2.2</span> Elementos del sonido</a></li>
+  <li><a href="#oscilaciones-en-el-tiempo-y-el-espacio" id="toc-oscilaciones-en-el-tiempo-y-el-espacio" class="nav-link" data-scroll-target="#oscilaciones-en-el-tiempo-y-el-espacio"><span class="header-section-number">2.3</span> Oscilaciones en el tiempo y el espacio</a></li>
+  <li><a href="#propagación-del-sonido" id="toc-propagación-del-sonido" class="nav-link" data-scroll-target="#propagación-del-sonido"><span class="header-section-number">2.4</span> Propagación del sonido</a></li>
+  <li><a href="#propagación-del-sonido-en-campo-libre" id="toc-propagación-del-sonido-en-campo-libre" class="nav-link" data-scroll-target="#propagación-del-sonido-en-campo-libre"><span class="header-section-number">2.5</span> Propagación del Sonido en Campo Libre</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -193,7 +207,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">Fundamentos de Acústica</h1>
+<h1 class="title">Fundamentos de Acústica</h1>
 </div>
 
 
@@ -206,10 +220,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   </div>
   
 
+
 </header>
 
+
 <div class="cell">
-<details class="hidden">
+<details class="code-fold hidden">
 <summary>Code</summary>
 <div class="sourceCode cell-code hidden" id="cb1" data-startfrom="13" data-source-offset="-74"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 12;"><span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> {P5} <span class="im">from</span> <span class="st">"@tmcw/p5"</span></span>
 <span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a></span>
@@ -247,7 +263,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 </div>
 <div class="cell">
-<details class="hidden">
+<details class="code-fold hidden">
 <summary>Code</summary>
 <div class="sourceCode cell-code hidden" id="cb2" data-startfrom="38" data-source-offset="-0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 37;"><span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a><span class="pp">require</span>(<span class="st">"p5"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
@@ -258,7 +274,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 </div>
 </div>
-<details class="hidden">
+<details class="code-fold hidden">
 <summary>Code</summary>
 <div class="sourceCode cell-code hidden" id="cb3" data-startfrom="40" data-source-offset="-17"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 39;"><span id="cb3-40"><a href="#cb3-40" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Wave {</span>
 <span id="cb3-41"><a href="#cb3-41" aria-hidden="true" tabindex="-1"></a>  <span class="fu">constructor</span>(p5<span class="op">,</span> amp<span class="op">,</span> freq<span class="op">,</span> phase<span class="op">,</span> res<span class="op">=</span><span class="dv">500</span>){</span>
@@ -452,7 +468,7 @@ Dentro de las conclusiones de la física del movimiento, tenemos que:
 </ul>
 <p>La gráfica interactiva a continuación nos muestra la forma de este tono puro.</p>
 <div class="cell">
-<details class="hidden">
+<details class="code-fold hidden">
 <summary>Code</summary>
 <div class="sourceCode cell-code hidden" id="cb4" data-startfrom="192" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 191;"><span id="cb4-192"><a href="#cb4-192" aria-hidden="true" tabindex="-1"></a><span class="fu">p5</span>(s1 <span class="kw">=&gt;</span> {</span>
 <span id="cb4-193"><a href="#cb4-193" aria-hidden="true" tabindex="-1"></a>    <span class="kw">let</span> wave<span class="op">;</span></span>
@@ -560,9 +576,10 @@ Mostrar/Ocultar solución
 
 </main> <!-- /main -->
 <script type="ojs-module-contents">
-{"contents":[{"methodName":"interpret","cellName":"ojs-cell-1","inline":false,"source":"// aquí van los códigos de javascript necesarios para correr el libro.\r\n\r\nimport {P5} from \"@tmcw/p5\"\r\n\r\n//P5 = require('https://unpkg.com/p5@1.2.0/lib/p5.js');\r\n\r\nfunction* p5(sketch) {\r\n  const element = DOM.element('div');\r\n  \r\n  yield element;\r\n  \r\n  const instance = new P5(sketch, element, true);\r\n  \r\n  try {\r\n    while (true) {\r\n      yield element;\r\n    }\r\n  } finally {\r\n    instance.remove();\r\n  }\r\n}\r\n//| echo: false\r\n"},{"methodName":"interpret","cellName":"ojs-cell-2","inline":false,"source":"require(\"p5\")\r\n\r\nclass Wave {\r\n  constructor(p5, amp, freq, phase, res=500){\r\n    this.p5 = p5;\r\n    this.amp = amp;\r\n    this.freq = freq;\r\n    this.phase = phase;\r\n    this.res = res;\r\n  }\r\n  \r\n  createSliders(){\r\n    this.p5.push()\r\n    this.ampSlider = this.p5.createSlider(-200, 200, this.amp, 0.5);\r\n    this.freqSlider = this.p5.createSlider(0.01, 20, this.freq, 0.1);\r\n    this.phaseSlider = this.p5.createSlider(0, this.p5.TWO_PI, this.phase, 0.1);\r\n    this.resSlider = this.p5.createSlider(1, 1500, this.res, 1);\r\n\r\n    //this.ampSlider.position(10, 10);\r\n    //this.freqSlider.position(100, 140);\r\n    //this.phaseSlider.position(100, 180);\r\n    //this.resSlider.position(100, 220);\r\n    this.p5.pop();\r\n  }\r\n  \r\n  evaluate(x, norm='norm'){\r\n      let width = this.p5.width;\r\n      return -this.amp * this.p5.sin(this.p5.TWO_PI * this.freq * x / width + this.phase);\r\n  }\r\n    \r\n  \r\n  draw(res=500, time=false){\r\n    this.p5.stroke(200);\r\n    //this.p5.fill();\r\n    //this.p5.fill();\r\n    this.p5.strokeWeight(3);\r\n    let y;\r\n    \r\n    this.amp = this.ampSlider.value();\r\n    this.freq = this.freqSlider.value();\r\n    this.phase = this.phaseSlider.value();\r\n    this.res = this.resSlider.value();\r\n    this.p5.text(\"Amplitud:  A = \" + this.amp, 10, -180);\r\n    this.p5.text(\"frecuencia:  f = \" + this.freq + ' Hz.', 10, -160);\r\n    this.p5.text(\"frecuencia radial: omega = \" + this.p5.round(this.p5.TWO_PI * this.freq, 1) + ' rad/seg', 10, -140);\r\n    this.p5.text(\"fase: phi = \" + this.phase + ' radianes.', 10, -120);\r\n    this.p5.text(\"resolución = \" + this.res + ' muestras.', 400, -180);\r\n    \r\n    for (let x = 0; x < this.p5.width; x+= this.p5.width/this.res){\r\n      if (time) {\r\n        y = this.evaluate(x - this.p5.frameCount * 2, 'norm');\r\n      } else {\r\n        y = this.evaluate(x, 'norm');\r\n      }\r\n      this.p5.point(x, y);\r\n    }\r\n  }\r\n  \r\n\r\n}\r\n//\r\n"},{"methodName":"interpret","cellName":"ojs-cell-3","inline":false,"source":"\r\n\r\np5(s1 => {\r\n    let wave;\r\n\r\n    s1.setup = function() {\r\n        s1.createCanvas(800, 400);\r\n        wave = new Wave(s1, 100, 10, 0, 1500);\r\n        // wave2 = new Wave(100, 2, 0, 1500);\r\n        wave.createSliders();\r\n    }\r\n\r\n    s1.draw = function() {\r\n        s1.background(20);\r\n        s1.translate(0, s1.height/2);\r\n        wave.draw();\r\n    //wave2.draw();\r\n    }\r\n}) \r\n"}]}
+eyJjb250ZW50cyI6W3sibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6Ii8vIGFxdcOtIHZhbiBsb3MgY8OzZGlnb3MgZGUgamF2YXNjcmlwdCBuZWNlc2FyaW9zIHBhcmEgY29ycmVyIGVsIGxpYnJvLlxyXG5cclxuaW1wb3J0IHtQNX0gZnJvbSBcIkB0bWN3L3A1XCJcclxuXHJcbi8vUDUgPSByZXF1aXJlKCdodHRwczovL3VucGtnLmNvbS9wNUAxLjIuMC9saWIvcDUuanMnKTtcclxuXHJcbmZ1bmN0aW9uKiBwNShza2V0Y2gpIHtcclxuICBjb25zdCBlbGVtZW50ID0gRE9NLmVsZW1lbnQoJ2RpdicpO1xyXG4gIFxyXG4gIHlpZWxkIGVsZW1lbnQ7XHJcbiAgXHJcbiAgY29uc3QgaW5zdGFuY2UgPSBuZXcgUDUoc2tldGNoLCBlbGVtZW50LCB0cnVlKTtcclxuICBcclxuICB0cnkge1xyXG4gICAgd2hpbGUgKHRydWUpIHtcclxuICAgICAgeWllbGQgZWxlbWVudDtcclxuICAgIH1cclxuICB9IGZpbmFsbHkge1xyXG4gICAgaW5zdGFuY2UucmVtb3ZlKCk7XHJcbiAgfVxyXG59XHJcbi8vfCBlY2hvOiBmYWxzZVxyXG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJjZWxsTmFtZSI6Im9qcy1jZWxsLTIiLCJpbmxpbmUiOmZhbHNlLCJzb3VyY2UiOiJyZXF1aXJlKFwicDVcIilcclxuXHJcbmNsYXNzIFdhdmUge1xyXG4gIGNvbnN0cnVjdG9yKHA1LCBhbXAsIGZyZXEsIHBoYXNlLCByZXM9NTAwKXtcclxuICAgIHRoaXMucDUgPSBwNTtcclxuICAgIHRoaXMuYW1wID0gYW1wO1xyXG4gICAgdGhpcy5mcmVxID0gZnJlcTtcclxuICAgIHRoaXMucGhhc2UgPSBwaGFzZTtcclxuICAgIHRoaXMucmVzID0gcmVzO1xyXG4gIH1cclxuICBcclxuICBjcmVhdGVTbGlkZXJzKCl7XHJcbiAgICB0aGlzLnA1LnB1c2goKVxyXG4gICAgdGhpcy5hbXBTbGlkZXIgPSB0aGlzLnA1LmNyZWF0ZVNsaWRlcigtMjAwLCAyMDAsIHRoaXMuYW1wLCAwLjUpO1xyXG4gICAgdGhpcy5mcmVxU2xpZGVyID0gdGhpcy5wNS5jcmVhdGVTbGlkZXIoMC4wMSwgMjAsIHRoaXMuZnJlcSwgMC4xKTtcclxuICAgIHRoaXMucGhhc2VTbGlkZXIgPSB0aGlzLnA1LmNyZWF0ZVNsaWRlcigwLCB0aGlzLnA1LlRXT19QSSwgdGhpcy5waGFzZSwgMC4xKTtcclxuICAgIHRoaXMucmVzU2xpZGVyID0gdGhpcy5wNS5jcmVhdGVTbGlkZXIoMSwgMTUwMCwgdGhpcy5yZXMsIDEpO1xyXG5cclxuICAgIC8vdGhpcy5hbXBTbGlkZXIucG9zaXRpb24oMTAsIDEwKTtcclxuICAgIC8vdGhpcy5mcmVxU2xpZGVyLnBvc2l0aW9uKDEwMCwgMTQwKTtcclxuICAgIC8vdGhpcy5waGFzZVNsaWRlci5wb3NpdGlvbigxMDAsIDE4MCk7XHJcbiAgICAvL3RoaXMucmVzU2xpZGVyLnBvc2l0aW9uKDEwMCwgMjIwKTtcclxuICAgIHRoaXMucDUucG9wKCk7XHJcbiAgfVxyXG4gIFxyXG4gIGV2YWx1YXRlKHgsIG5vcm09J25vcm0nKXtcclxuICAgICAgbGV0IHdpZHRoID0gdGhpcy5wNS53aWR0aDtcclxuICAgICAgcmV0dXJuIC10aGlzLmFtcCAqIHRoaXMucDUuc2luKHRoaXMucDUuVFdPX1BJICogdGhpcy5mcmVxICogeCAvIHdpZHRoICsgdGhpcy5waGFzZSk7XHJcbiAgfVxyXG4gICAgXHJcbiAgXHJcbiAgZHJhdyhyZXM9NTAwLCB0aW1lPWZhbHNlKXtcclxuICAgIHRoaXMucDUuc3Ryb2tlKDIwMCk7XHJcbiAgICAvL3RoaXMucDUuZmlsbCgpO1xyXG4gICAgLy90aGlzLnA1LmZpbGwoKTtcclxuICAgIHRoaXMucDUuc3Ryb2tlV2VpZ2h0KDMpO1xyXG4gICAgbGV0IHk7XHJcbiAgICBcclxuICAgIHRoaXMuYW1wID0gdGhpcy5hbXBTbGlkZXIudmFsdWUoKTtcclxuICAgIHRoaXMuZnJlcSA9IHRoaXMuZnJlcVNsaWRlci52YWx1ZSgpO1xyXG4gICAgdGhpcy5waGFzZSA9IHRoaXMucGhhc2VTbGlkZXIudmFsdWUoKTtcclxuICAgIHRoaXMucmVzID0gdGhpcy5yZXNTbGlkZXIudmFsdWUoKTtcclxuICAgIHRoaXMucDUudGV4dChcIkFtcGxpdHVkOiAgQSA9IFwiICsgdGhpcy5hbXAsIDEwLCAtMTgwKTtcclxuICAgIHRoaXMucDUudGV4dChcImZyZWN1ZW5jaWE6ICBmID0gXCIgKyB0aGlzLmZyZXEgKyAnIEh6LicsIDEwLCAtMTYwKTtcclxuICAgIHRoaXMucDUudGV4dChcImZyZWN1ZW5jaWEgcmFkaWFsOiBvbWVnYSA9IFwiICsgdGhpcy5wNS5yb3VuZCh0aGlzLnA1LlRXT19QSSAqIHRoaXMuZnJlcSwgMSkgKyAnIHJhZC9zZWcnLCAxMCwgLTE0MCk7XHJcbiAgICB0aGlzLnA1LnRleHQoXCJmYXNlOiBwaGkgPSBcIiArIHRoaXMucGhhc2UgKyAnIHJhZGlhbmVzLicsIDEwLCAtMTIwKTtcclxuICAgIHRoaXMucDUudGV4dChcInJlc29sdWNpw7NuID0gXCIgKyB0aGlzLnJlcyArICcgbXVlc3RyYXMuJywgNDAwLCAtMTgwKTtcclxuICAgIFxyXG4gICAgZm9yIChsZXQgeCA9IDA7IHggPCB0aGlzLnA1LndpZHRoOyB4Kz0gdGhpcy5wNS53aWR0aC90aGlzLnJlcyl7XHJcbiAgICAgIGlmICh0aW1lKSB7XHJcbiAgICAgICAgeSA9IHRoaXMuZXZhbHVhdGUoeCAtIHRoaXMucDUuZnJhbWVDb3VudCAqIDIsICdub3JtJyk7XHJcbiAgICAgIH0gZWxzZSB7XHJcbiAgICAgICAgeSA9IHRoaXMuZXZhbHVhdGUoeCwgJ25vcm0nKTtcclxuICAgICAgfVxyXG4gICAgICB0aGlzLnA1LnBvaW50KHgsIHkpO1xyXG4gICAgfVxyXG4gIH1cclxuICBcclxuXHJcbn1cclxuLy9cclxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiY2VsbE5hbWUiOiJvanMtY2VsbC0zIiwiaW5saW5lIjpmYWxzZSwic291cmNlIjoiXHJcblxyXG5wNShzMSA9PiB7XHJcbiAgICBsZXQgd2F2ZTtcclxuXHJcbiAgICBzMS5zZXR1cCA9IGZ1bmN0aW9uKCkge1xyXG4gICAgICAgIHMxLmNyZWF0ZUNhbnZhcyg4MDAsIDQwMCk7XHJcbiAgICAgICAgd2F2ZSA9IG5ldyBXYXZlKHMxLCAxMDAsIDEwLCAwLCAxNTAwKTtcclxuICAgICAgICAvLyB3YXZlMiA9IG5ldyBXYXZlKDEwMCwgMiwgMCwgMTUwMCk7XHJcbiAgICAgICAgd2F2ZS5jcmVhdGVTbGlkZXJzKCk7XHJcbiAgICB9XHJcblxyXG4gICAgczEuZHJhdyA9IGZ1bmN0aW9uKCkge1xyXG4gICAgICAgIHMxLmJhY2tncm91bmQoMjApO1xyXG4gICAgICAgIHMxLnRyYW5zbGF0ZSgwLCBzMS5oZWlnaHQvMik7XHJcbiAgICAgICAgd2F2ZS5kcmF3KCk7XHJcbiAgICAvL3dhdmUyLmRyYXcoKTtcclxuICAgIH1cclxufSkgXHJcbiJ9XX0=
 </script>
 <script type="module">
+if (window.location.protocol === "file:") { alert("The OJS runtime does not work with file:// URLs. Please use a web server to view this document."); }
 window._ojs.paths.runtimeToDoc = "../..";
 window._ojs.paths.runtimeToRoot = "../..";
 window._ojs.paths.docToRoot = "";
@@ -610,6 +627,33 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       } else {
         el.classList.add('notransition');
       }
+    }
+  }
+  const toggleGiscusIfUsed = (isAlternate, darkModeDefault) => {
+    const baseTheme = document.querySelector('#giscus-base-theme')?.value ?? 'light';
+    const alternateTheme = document.querySelector('#giscus-alt-theme')?.value ?? 'dark';
+    let newTheme = '';
+    if(darkModeDefault) {
+      newTheme = isAlternate ? baseTheme : alternateTheme;
+    } else {
+      newTheme = isAlternate ? alternateTheme : baseTheme;
+    }
+    const changeGiscusTheme = () => {
+      // From: https://github.com/giscus/giscus/issues/336
+      const sendMessage = (message) => {
+        const iframe = document.querySelector('iframe.giscus-frame');
+        if (!iframe) return;
+        iframe.contentWindow.postMessage({ giscus: message }, 'https://giscus.app');
+      }
+      sendMessage({
+        setConfig: {
+          theme: newTheme
+        }
+      });
+    }
+    const isGiscussLoaded = window.document.querySelector('iframe.giscus-frame') !== null;
+    if (isGiscussLoaded) {
+      changeGiscusTheme();
     }
   }
   const toggleColorMode = (alternate) => {
@@ -678,13 +722,15 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return localAlternateSentinel;
     }
   }
-  let localAlternateSentinel = 'default';
+  const darkModeDefault = false;
+  let localAlternateSentinel = darkModeDefault ? 'alternate' : 'default';
   // Dark / light mode switch
   window.quartoToggleColorScheme = () => {
     // Read the current dark / light value 
     let toAlternate = !hasAlternateSentinel();
     toggleColorMode(toAlternate);
     setStyleSentinel(toAlternate);
+    toggleGiscusIfUsed(toAlternate, darkModeDefault);
   };
   // Ensure there is a toggle, if there isn't float one in the top right
   if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
@@ -711,9 +757,23 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     icon: icon
   };
   anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
   const clipboard = new window.ClipboardJS('.code-copy-button', {
-    target: function(trigger) {
-      return trigger.previousElementSibling;
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
     }
   });
   clipboard.on('success', function(e) {
@@ -749,10 +809,9 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -762,8 +821,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -778,6 +846,238 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
   const findCites = (el) => {
     const parentEl = el.parentElement;
     if (parentEl) {
@@ -818,6 +1118,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
+
 
 
 

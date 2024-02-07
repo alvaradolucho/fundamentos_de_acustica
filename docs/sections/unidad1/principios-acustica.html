@@ -43,9 +43,6 @@ ul.task-list li input[type="checkbox"] {
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
 <link href="../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
-<script src="../../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
-<link href="../../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
-<link href="../../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -73,35 +70,6 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 </head>
 
@@ -282,104 +250,6 @@ window.Quarto = {
 </tr>
 </tbody>
 </table>
-</section>
-<section id="elementos-del-sonido" class="level2">
-<h2 class="anchored" data-anchor-id="elementos-del-sonido">Elementos del sonido</h2>
-<p>Actualmente se reconocen cinco elementos del sonido: <strong>amplitud</strong>, <strong>frecuencia</strong>, <strong>timbre</strong>, <strong>duración</strong> y <strong>ataque</strong>.</p>
-<ul>
-<li><strong>Amplitud:</strong> Se refiere al tamaño de la onda y está relacionado con la intensidad sonora, o dicho de otra forma: <strong>sonoridad</strong> (<em>loudness</em>).</li>
-<li><strong>Tono:</strong> Se refiere a la altura tonal de la onda y está relacionada con la <strong>frecuencia de oscilación</strong>.</li>
-<li><strong>Timbre:</strong> Se refiere a la cualidad que hace distinguibles a las fuentes sonoras. Está relacionada con la <strong>forma de la onda</strong> y su <strong>espectro de frecuencias</strong>.</li>
-<li><strong>Duración:</strong> El <strong>tiempo</strong> en que el sonido se mantiene en ejecución.</li>
-<li><strong>Ataque:</strong> El tiempo en que el sonido demora en llegar, desde el silencio hasta su máxima amplitud. Está relacionada con la <em>percusividad</em> del sonido.</li>
-</ul>
-<p>Consideremos un <strong>tono puro</strong>. La ecuación que lo representa se muestra a continuación:</p>
-<p><span class="math display">\[y = A\sin(\omega t + \phi)\]</span></p>
-<p>En donde:</p>
-<ul>
-<li><span class="math inline">\(y\)</span> es la posición de la onda en un tiempo determinado.</li>
-<li><span class="math inline">\(A\)</span> es la amplitud de la onda.</li>
-<li><span class="math inline">\(\omega\)</span> es la velocidad angular de la oscilación. Se puede obtener conociendo la frecuencia de la onda, mediante <span class="math inline">\(\omega = 2\pi f\)</span>.</li>
-<li><span class="math inline">\(t\)</span> es un instante de tiempo determinado.</li>
-<li><span class="math inline">\(\phi\)</span> es el desfase de la onda respecto de un comienzo determinado.</li>
-</ul>
-<p>En el siguiente sketch, usted podrá manipular y escuchar tonos puros y señales complejas tales como <strong>ondas cuadradas, triangulares y dientes de sierra</strong>.</p>
-<iframe width="700" height="400" src="https://editor.p5js.org/alvaradolucho/full/qaIjMdcxe">
-</iframe>
-</section>
-<section id="oscilaciones-en-el-tiempo-y-el-espacio" class="level2">
-<h2 class="anchored" data-anchor-id="oscilaciones-en-el-tiempo-y-el-espacio">Oscilaciones en el tiempo y el espacio</h2>
-<p>Considere una cuerda fijada en ambos extremos, al ser esta cuerda excitada mediante una fuerza oscilatoria, podemos ver que se <strong>transmite una onda en el espacio y el tiempo</strong>.</p>
-<p><a href="https://media.springernature.com/lw685/springer-static/image/chp%3A10.1007%2F978-1-4614-0557-3_2/MediaObjects/214769_1_En_2_Fig7_HTML.gif" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="https://media.springernature.com/lw685/springer-static/image/chp%3A10.1007%2F978-1-4614-0557-3_2/MediaObjects/214769_1_En_2_Fig7_HTML.gif" class="img-fluid"></a></p>
-<p>Es decir, tendremos una frecuencia temporal <span class="math inline">\(f\)</span> y una frecuencia espacial <span class="math inline">\(\nu\)</span>. Notar que en la imagen anterior se observa una frecuencia espacial.</p>
-<p>En el espacio podemos medir la longitud de onda <span class="math inline">\(\lambda: [m]\)</span> y con ello obtener su frecuencia espacial: <span class="math display">\[\nu = \dfrac{1}{\lambda} \qquad\left[\dfrac{\text{ciclos}}{m}\right]\]</span></p>
-<p>Además, podemos conocer el número de ciclos por cada unidad de distancia.</p>
-<p><span class="math display">\[k = \dfrac{2\pi}{\lambda}\qquad \left[\dfrac{\text{radianes}}{m}\right]\]</span></p>
-<p>En el tiempo, podemos medir el período de oscilación <span class="math inline">\(T: [s]\)</span>, con la cual podemos obtener la frecuencia <span class="math inline">\(f\)</span>:</p>
-<p><span class="math display">\[f = \dfrac{1}{T}\qquad \left[\frac{\text{ciclos}}{s}\right] = \left[\text{Hz}\right]\]</span></p>
-<p>Con ello, podemos obtener la frecuencia circular de oscilación <span class="math inline">\(\omega\)</span>, que puede obtenerse mediante:</p>
-<p><span class="math display">\[\omega = 2\pi f = \dfrac{2\pi}{T}\qquad \left[\dfrac{\text{radianes}}{s} \right]\]</span></p>
-<p>Es importante reconocer las similaridades en los casos espacial y temporal:</p>
-<ul>
-<li><span class="math inline">\(f\)</span> es análoga a <span class="math inline">\(\nu\)</span>.</li>
-<li><span class="math inline">\(T\)</span> es análoga a <span class="math inline">\(\lambda\)</span>.</li>
-<li><span class="math inline">\(\omega\)</span> es análoga a <span class="math inline">\(k\)</span>.</li>
-</ul>
-</section>
-<section id="propagación-del-sonido" class="level2">
-<h2 class="anchored" data-anchor-id="propagación-del-sonido">Propagación del sonido</h2>
-<p>Para que haya sonido debe haber un medio elástico por donde se propague. Imaginémoslo como gotas que caen en medio del lago. Nuestro medio, como hemos dicho, es el aire, pero los principios que veremos en este curso servirán para todo medio elástico, sea aire, agua, aceite, etc.</p>
-<p>Considerando una temperatura estándar de 20°C, dos constantes del medio aire nos serán de gran utilidad para el resto del curso.</p>
-<ol type="1">
-<li><p>Velocidad de propagación del sonido en el aire: <span class="math display">\[c = 344\ \dfrac{m}{s}\]</span></p></li>
-<li><p>Densidad del aire: <span class="math display">\[\rho_0 = 1.18\ \dfrac{kg}{m^3}\]</span></p></li>
-</ol>
-<p>Con ello ahora podemos relacionar los conceptos de la onda espacial y temporal con el aire. De este modo completamos el sistema sonoro que conocemos.</p>
-<p><span class="math display">\[\lambda = \dfrac{c}{f}\]</span></p>
-<p>con <span class="math display">\[20\ \text{Hz} \leq f \leq 20\ \text{kHz}\]</span></p>
-<p>¿Cuál es el rango audible en términos de longitudes de onda?</p>
-<details>
-<summary>
-Mostrar/Ocultar solución
-</summary>
-<ul>
-<li><p>Para el caso <span class="math inline">\(f = 20\)</span> Hz: <span class="math inline">\(\lambda = \dfrac{c}{f} = \dfrac{344}{20} = 17.2\)</span> m.</p></li>
-<li><p>Para el caso <span class="math inline">\(f = 20\)</span> kHz: <span class="math inline">\(\lambda = \dfrac{c}{f} = \dfrac{344}{20000} = 0.0172\ m = 1.72\ cm\)</span>.</p>
-<p>Por lo tanto, el rango audible expresado en longitudes de onda es: <span class="math display">\[1.7\ cm \leq \lambda \leq 17\ m\]</span></p></li>
-</ul>
-</details>
-</section>
-<section id="propagación-del-sonido-en-campo-libre" class="level2">
-<h2 class="anchored" data-anchor-id="propagación-del-sonido-en-campo-libre">Propagación del Sonido en Campo Libre</h2>
-<p>Supongamos una <strong>fuente sonora</strong> que se encuentra en <strong>campo libre</strong>, es decir, que se encuentra suspendida en el aire a una distancia tal que no se enfrente a reflexiones sonoras. Asumamos a su vez, que esta fuente radía sonido a todas direcciones con igual intensidad (a esto le llamamos <strong>fuente omnidireccional</strong>). Vamos a necesitar algunos descriptores que nos permitan cuantificar la energía sonora, dependiendo de si estamos hablando de la fuente sonora, de algún punto en el espacio en que el sonido se propaga, y la energía que llega a los receptores. Los descriptores de indican a continuación:</p>
-<table class="table">
-<colgroup>
-<col style="width: 33%">
-<col style="width: 33%">
-<col style="width: 33%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Fuente sonora</th>
-<th>Propagación en el medio</th>
-<th>Receptor</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Potencia acústica</td>
-<td>Intensidad Acústica</td>
-<td>Presión sonora</td>
-</tr>
-<tr class="even">
-<td><span class="math inline">\(W_A:\quad \left[W\right]\)</span></td>
-<td><span class="math inline">\(I_A:\quad \left[\dfrac{W}{m^2}\right]\)</span></td>
-<td><span class="math inline">\(p_A:\quad \left[\dfrac{N}{m^2}\right]\)</span></td>
-</tr>
-</tbody>
-</table>
-<p><a href="img/sec1/1_cuerda_guitarra.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="img/sec1/1_cuerda_guitarra.jpg" class="img-fluid"></a></p>
-<p><a href="img/sec1/2_guitarra_camino_oido.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img src="img/sec1/2_guitarra_camino_oido.jpg" class="img-fluid"></a></p>
 
 
 </section>
@@ -929,31 +799,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"loop":false,"selector":".lightbox","closeEffect":"zoom","openEffect":"zoom","descPosition":"bottom"});
-window.onload = () => {
-  lightboxQuarto.on('slide_before_load', (data) => {
-    const { slideIndex, slideNode, slideConfig, player, trigger } = data;
-    const href = trigger.getAttribute('href');
-    if (href !== null) {
-      const imgEl = window.document.querySelector(`a[href="${href}"] img`);
-      if (imgEl !== null) {
-        const srcAttr = imgEl.getAttribute("src");
-        if (srcAttr && srcAttr.startsWith("data:")) {
-          slideConfig.href = srcAttr;
-        }
-      }
-    } 
-  });
-
-  lightboxQuarto.on('slide_after_load', (data) => {
-    const { slideIndex, slideNode, slideConfig, player, trigger } = data;
-    if (window.Quarto?.typesetMath) {
-      window.Quarto.typesetMath(slideNode);
-    }
-  });
-
-};
-          </script>
 
 
 

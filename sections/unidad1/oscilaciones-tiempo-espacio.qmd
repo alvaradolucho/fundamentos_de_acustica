@@ -1,7 +1,7 @@
 ---
 title: "Oscilaciones en el tiempo y en el espacio"
 execute:
-    freeze: auto
+    freeze: false
 ---
 
 

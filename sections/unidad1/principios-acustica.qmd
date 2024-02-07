@@ -55,32 +55,9 @@ En donde:
 * $t$ es un instante de tiempo determinado.
 * $\phi$ es el desfase de la onda respecto de un comienzo determinado.
 
-La gráfica interactiva a continuación nos muestra la forma de este tono puro.
-```{ojs}
-//| echo: false
+En el siguiente sketch, usted podrá manipular y escuchar tonos puros y señales complejas tales como **ondas cuadradas, triangulares y dientes de sierra**.
 
-
-p5(s1 => {
-    let wave;
-
-    s1.setup = function() {
-        s1.createCanvas(800, 400);
-        wave = new Wave(s1, 100, 10, 0, 1500);
-        // wave2 = new Wave(100, 2, 0, 1500);
-        wave.createSliders();
-    }
-
-    s1.draw = function() {
-        s1.background(20);
-        s1.translate(0, s1.height/2);
-        wave.draw();
-    //wave2.draw();
-    }
-}) 
-```
-
-Además, [en este *sketch*](https://editor.p5js.org/alvaradolucho/sketches/qaIjMdcxe) le permitirá manipular y escuchar tonos puros y señales complejas tales como **ondas cuadradas, triangulares y dientes de sierra**.
-
+<iframe width=700 height=400 src="https://editor.p5js.org/alvaradolucho/full/qaIjMdcxe"></iframe>
 
 ## Oscilaciones en el tiempo y el espacio
 

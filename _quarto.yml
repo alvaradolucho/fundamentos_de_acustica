@@ -28,6 +28,7 @@ website:
             - sections/unidad1/principios-fisicos.qmd
             - sections/unidad1/principios-acustica.qmd
             - sections/unidad1/elementos-del-sonido.qmd
+            - sections/unidad1/oscilaciones-tiempo-espacio.qmd
 
 lightbox: true
 

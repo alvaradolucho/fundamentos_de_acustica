@@ -79,30 +79,3 @@ plt.xlim([t[0], t[-1]])
 plt.legend(legend_)
 ```
 
-<!--
-<details>
-<summary>Principios de la Dinámica</summary>
-
-
-## Principios de la Dinámica
-
-La posición de un cuerpo en un espacio se puede representar como en un **vector** en el espacio (para mayor simplicidad lo representaremos en un plano 2D). Si definimos un punto $r$ cuyas coordenadas $(r_x, r_y)$ dependen del tiempo, entonces:
-
-$$\vec{r} = (r_x(t), r_y(t))$$
-
-Si el cuerpo cambia de posición, lo hace en un tiempo determinado, de modo que aquel cambio de posición respecto del tiempo es llamado **velocidad** y se define como:
-
-$$\vec{v}(r) = \dfrac{\Delta r}{\Delta t} = \dfrac{r_2 - r_1}{t_2 - t_1}$$
-
-Además es de mucho interés conocer cómo la velocidad varía con el tiempo. Por ejemplo un bus frenando posee velocidad pero ésta va decayendo con el tiempo, o bien, si el bus va acelerando, significa que tiene velocidad y además ésta va aumentando con el tiempo. Podemos expresar matemáticamente esto como:
-
-$$\vec{a} = \dfrac{\Delta v}{\Delta t}$$
-
-Dentro de las conclusiones de la física del movimiento, tenemos que:
-
-* El signo de las componentes de los vectores muestran la dirección del vector.
-* Si $\vec{a}=\vec{0}$ y $\vec{v}\neq\vec{0}$, entonces el cuerpo está movíéndose en velocidad constante. 
-* Si $\vec{a}=\vec{0}$ y $\vec{v} = \vec{0}$, entonces el cuerpo está en reposo (sin movimiento).
-
-</details>
--->

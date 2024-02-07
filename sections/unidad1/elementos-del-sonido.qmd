@@ -1,7 +1,7 @@
 ---
 title: "Elementos del Sonido"
 execute:
-    freeze: false
+    freeze: auto
 ---
 
 Actualmente se reconocen cinco elementos del sonido: **amplitud**, **frecuencia**, **timbre**, **duración** y **ataque**.

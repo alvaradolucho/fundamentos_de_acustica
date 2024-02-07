@@ -1,7 +1,7 @@
 ---
 title: "Sistema Fuente - Medio - Receptor"
 execute:
-    freeze: false
+    freeze: auto
 ---
 
 

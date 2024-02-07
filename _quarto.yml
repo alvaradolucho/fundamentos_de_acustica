@@ -1,10 +1,6 @@
 project:
   type: website
-  output-dir: docs
-
-theme:
-  light: flatly
-  dark: darkly
+  output-dir: _site
 
 website:
   page-navigation: true
@@ -17,8 +13,11 @@ website:
   #  background: dark
   sidebar:      
     - title: "Fundamentos de Acústica"
-      background: dark
+      # background: dark
       style: "docked"
+      tools:
+        - icon: github
+          url: https://github.com/alvaradolucho 
       contents:
         - text: "---"
         - section: "Inicio"
@@ -28,10 +27,17 @@ website:
           contents:
             - sections/unidad1/principios-fisicos.qmd
             - sections/unidad1/principios-acustica.qmd
-    
+
+lightbox: true
+
 format:
-    html:
-        code-fold: true
-        theme: darkly
+  html:
+    code-fold: true
+    theme:
+      light: cosmo
+      dark: darkly
+    fontsize: 1.5em
+    linestretch: 1.5
+        
       
 site-url: https://github.com/alvaradolucho/fundamentos_de_acustica

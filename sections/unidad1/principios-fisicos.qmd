@@ -2,16 +2,70 @@
 title: "Principios de la Física"
 ---
 
-# Principios Físicos
-
-En la física exploramos desde lo más pequeño hasta lo más grande. Desde una fracción pequeña de un protón hasta el universo mismo, contemplando aproximadamente 45 órdenes de magnitud. Para expresar las mediciones cuantitativamente, necesitamos introducir las **unidades de medida**. Las unidades fundamentales de la física son: **longitud**, **tiempo** y **masa**.
+En la física exploramos el comportamiento de los objetos. Desde una fracción pequeña de un protón hasta el universo mismo, contemplando aproximadamente 45 órdenes de magnitud ($10^{45}$). Para expresar las mediciones cuantitativamente, necesitamos introducir las **unidades de medida**. Las unidades fundamentales de la física son: **longitud**, **tiempo** y **masa**.
 
 | Longitud | Tiempo | Masa |
 |----------|--------|------|
 | Metros | Segundos | Kilógramos |
 | m | s | kg |
 
-A partir de estas unidades, se pueden desarrollar teóricamente todas las unidades derivadas, como centrímetros (cm), milímetros (mm), minutos (min), horas (hrs), días, años, milisegundos (ms), gramos (g), litros (lt), etc.
+--- 
+
+## Leyes de la Dinámica
+
+El movimiento de los cuerpos en el tiempo y en el espacio está representada en las Leyes de Newton, en donde introduce y relaciona los conceptos de fuerza, masa y aceleración, es decir, el movimiento dado a partir de acciones sobre los cuerpos.
+
++ Primera Ley: Un objeto estático o a velocidad constante permanecerá en ese estado a menos que una fuerza sea aplicada sobre ese cuerpo.
++ Segunda Ley: Si se aplica una fuerza $F$ sobre un cuerpo de masa $m$, éste se moverá con una aceleración $a$ en la misma dirección de la fuerza. $$\sum_{i}F_i = ma$$
++ Tercera Ley: Si un objeto $A$ aplica una fuerza sobre un cuerpo $B$, éste último aplica una fuerza de la misma magnitud sobre el cuerpo $A$. Esta ley se conoce como "ley de acción-reacción". Este fenómeno no es muy intuitivo, pero a modo ilutrativo podemos decir que es lo que permite la propulsión de cohetes.
+$$F_\text{acción} = - F_\text{reacción}$$
+
+## Movimiento Armónico Simple
+
+Considere una masa $m$ conectada a una pared rígida mediante un componente elástico (es decir, que pueda ser comprimido y descomprimido). Si se aplica una fuerza $F$ sobre la masa, el componente elástico se opondrá a la fuerza de manera proporcional al desplazamiento $x$, con lo que llamaremos "fuerza de restitución", de tal modo que: 
+
+$$F_\text{restitución} = -kx$$
+
+El balance de fuerzas en el sistema masa-resorte es entonces:
+
+$$\begin{align*}
+F_\text{restitución} & = ma \\
+-kx &= ma \\
+ma + kx &= 0
+\end{align*}
+$$
+
+Recordando que la aceleración de un objeto es la segunda derivada de la posición, es decir $a = \ddot{x}(t)$, resulta entonces que:
+
+$$\boxed{m\ddot{x} + kx = 0}$$
+
+Esta ecuación la conocemos como **Movimiento Armónico Simple** y su solución es de forma ondulatoria:
+
+$$x(t) = A\sin(\omega t + \phi)$$
+donde:
+
++ $A$ es la amplitud de la onda.
++ $\omega=2\pi f$ es la frecuencia angular en $\frac{rad}{s}$, que se puede obtener a partir de una frecuencia $f$ en $\text{Hz} = \frac{1}{s}$.
++ $\phi$ es la fase o ángulo de desfase.
+
+```{python}
+import matplotlib.pyplot as plt
+import numpy as np
+
+a = 1.0
+f = 1
+omega = 2 * np.pi * f
+phi = 0.0
+t = np.linspace(0, 2, 100)
+x = a * np.sin(omega * t + phi)
+
+plt.plot(t, x)
+plt.xlabel('Tiempo $t$ en segundos')
+plt.ylabel('Desplazamiento $x(t)$ en metros')
+plt.title('Desplazamiento de la masa en el movimiento armónico simple')
+plt.xlim([t[0], t[-1]])
+```
+
 <!--
 <details>
 <summary>Principios de la Dinámica</summary>

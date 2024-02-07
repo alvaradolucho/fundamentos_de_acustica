@@ -33,6 +33,17 @@
     ]
   },
   {
+    "objectID": "sections/unidad1/elementos-del-sonido.html",
+    "href": "sections/unidad1/elementos-del-sonido.html",
+    "title": "Elementos del Sonido",
+    "section": "",
+    "text": "Actualmente se reconocen cinco elementos del sonido: amplitud, frecuencia, timbre, duración y ataque.\n\nAmplitud: Se refiere al tamaño de la onda y está relacionado con la intensidad sonora, o dicho de otra forma: sonoridad (loudness).\nTono: Se refiere a la altura tonal de la onda y está relacionada con la frecuencia de oscilación.\nTimbre: Se refiere a la cualidad que hace distinguibles a las fuentes sonoras. Está relacionada con la forma de la onda y su espectro de frecuencias.\nDuración: El tiempo en que el sonido se mantiene en ejecución.\nAtaque: El tiempo en que el sonido demora en llegar, desde el silencio hasta su máxima amplitud. Está relacionada con la percusividad del sonido.\n\nConsideremos un tono puro. La ecuación que lo representa se muestra a continuación:\n\\[y = A\\sin(\\omega t + \\phi)\\]\nEn donde:\n\n\\(y\\) es la posición de la onda en un tiempo determinado.\n\\(A\\) es la amplitud de la onda.\n\\(\\omega\\) es la velocidad angular de la oscilación. Se puede obtener conociendo la frecuencia de la onda, mediante \\(\\omega = 2\\pi f\\).\n\\(t\\) es un instante de tiempo determinado.\n\\(\\phi\\) es el desfase de la onda respecto de un comienzo determinado.\n\nEn el siguiente sketch, usted podrá manipular y escuchar tonos puros y señales complejas tales como ondas cuadradas, triangulares y dientes de sierra.",
+    "crumbs": [
+      "Unidad 1 - Elementos del Sonido",
+      "Elementos del Sonido"
+    ]
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Curso Fundamentos de Acústica",

@@ -27,6 +27,7 @@ website:
           contents:
             - sections/unidad1/principios-fisicos.qmd
             - sections/unidad1/principios-acustica.qmd
+            - sections/unidad1/elementos-del-sonido.qmd
 
 lightbox: true
 

@@ -54,65 +54,29 @@ donde:
 
 
 ```{python}
-import ipywidgets as widgets
 import matplotlib.pyplot as plt
 import numpy as np
-
-from IPython.display import display
-from ipywidgets import interactive_output
-
-m_slider = widgets.FloatSlider(
-    value=2,
-    min=0.0,
-    max=100.0,
-    description='m' 
-)
-
-k_slider = widgets.FloatSlider(
-    value=2500,
-    min=1000,
-    max=5000,
-    description='k'
-)
-
-#output = widgets.Output()
-
-#@output.capture()
-def get_frequency(m, k):
-    freq = ( 1 / (2 * np.pi)) * np.sqrt(k / m)
-    print( freq )
-
-
-# output = widgets.interactive_output(get_frequency, {'m': m_slider, 'k': k_slider})
-
-out = interactive_output(
-    get_frequency,
-    {
-        'm': m_slider,
-        'k': k_slider
-    }
-)
-
-
-
-
-display(m_slider, k_slider, out)
-
-
 
 a = 1.0
 # f = 1
 # omega = 2 * np.pi * f
-omega = np.sqrt(k_slider.value / m_slider.value)
+k = 5000
+m = [160, 80, 40]
+legend_ = ['$m = $' + str(m_) + ' kg.' for m_ in m]
+omega = np.sqrt(k / np.array(m))
+linestyles = ['-b', '--r', '--k']
 phi = 0.0
 t = np.linspace(0, 2, 100)
-x = a * np.sin(omega * t + phi)
 
-plt.plot(t, x)
+fig, ax = plt.subplots()
+for idx, om in enumerate(omega):
+    x = a * np.sin(om * t + phi)
+    plt.plot(t, x, linestyles[idx])
 plt.xlabel('Tiempo $t$ en segundos')
 plt.ylabel('Desplazamiento $x(t)$ en metros')
-plt.title('Desplazamiento de la masa en el movimiento armónico simple')
+plt.title('Desplazamiento de la masa en el sistema masa resorte, con $k = ' + str(k) + ' \\frac{N}{m}$')
 plt.xlim([t[0], t[-1]])
+plt.legend(legend_)
 ```
 
 <!--

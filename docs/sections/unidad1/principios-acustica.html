@@ -248,127 +248,8 @@ window.Quarto = {
 </header>
 
 
-<div class="cell">
-<details class="code-fold hidden">
-<summary>Code</summary>
-<div class="sourceCode cell-code hidden" id="cb1" data-startfrom="9" data-source-offset="-74"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 8;"><span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> {P5} <span class="im">from</span> <span class="st">"@tmcw/p5"</span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co">//P5 = require('https://unpkg.com/p5@1.2.0/lib/p5.js');</span></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span><span class="op">*</span> <span class="fu">p5</span>(sketch) {</span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> element <span class="op">=</span> DOM<span class="op">.</span><span class="fu">element</span>(<span class="st">'div'</span>)<span class="op">;</span></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>  <span class="kw">yield</span> element<span class="op">;</span></span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>  <span class="kw">const</span> instance <span class="op">=</span> <span class="kw">new</span> <span class="fu">P5</span>(sketch<span class="op">,</span> element<span class="op">,</span> <span class="kw">true</span>)<span class="op">;</span></span>
-<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>  <span class="cf">try</span> {</span>
-<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>    <span class="cf">while</span> (<span class="kw">true</span>) {</span>
-<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>      <span class="kw">yield</span> element<span class="op">;</span></span>
-<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a>    }</span>
-<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>  } <span class="cf">finally</span> {</span>
-<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>    instance<span class="op">.</span><span class="fu">remove</span>()<span class="op">;</span></span>
-<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-1-1" data-nodetype="declaration">
-
-</div>
-</div>
-</div>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-1-2" data-nodetype="declaration">
-
-</div>
-</div>
-</div>
-</div>
-<div class="cell">
-<details class="code-fold hidden">
-<summary>Code</summary>
-<div class="sourceCode cell-code hidden" id="cb2" data-startfrom="34" data-source-offset="-0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 33;"><span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a><span class="pp">require</span>(<span class="st">"p5"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-2-1" data-nodetype="expression">
-
-</div>
-</div>
-</div>
-<details class="code-fold hidden">
-<summary>Code</summary>
-<div class="sourceCode cell-code hidden" id="cb3" data-startfrom="36" data-source-offset="-17"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 35;"><span id="cb3-36"><a href="#cb3-36" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Wave {</span>
-<span id="cb3-37"><a href="#cb3-37" aria-hidden="true" tabindex="-1"></a>  <span class="fu">constructor</span>(p5<span class="op">,</span> amp<span class="op">,</span> freq<span class="op">,</span> phase<span class="op">,</span> res<span class="op">=</span><span class="dv">500</span>){</span>
-<span id="cb3-38"><a href="#cb3-38" aria-hidden="true" tabindex="-1"></a>    <span class="kw">this</span><span class="op">.</span><span class="at">p5</span> <span class="op">=</span> p5<span class="op">;</span></span>
-<span id="cb3-39"><a href="#cb3-39" aria-hidden="true" tabindex="-1"></a>    <span class="kw">this</span><span class="op">.</span><span class="at">amp</span> <span class="op">=</span> amp<span class="op">;</span></span>
-<span id="cb3-40"><a href="#cb3-40" aria-hidden="true" tabindex="-1"></a>    <span class="kw">this</span><span class="op">.</span><span class="at">freq</span> <span class="op">=</span> freq<span class="op">;</span></span>
-<span id="cb3-41"><a href="#cb3-41" aria-hidden="true" tabindex="-1"></a>    <span class="kw">this</span><span class="op">.</span><span class="at">phase</span> <span class="op">=</span> phase<span class="op">;</span></span>
-<span id="cb3-42"><a href="#cb3-42" aria-hidden="true" tabindex="-1"></a>    <span class="kw">this</span><span class="op">.</span><span class="at">res</span> <span class="op">=</span> res<span class="op">;</span></span>
-<span id="cb3-43"><a href="#cb3-43" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb3-44"><a href="#cb3-44" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb3-45"><a href="#cb3-45" aria-hidden="true" tabindex="-1"></a>  <span class="fu">createSliders</span>(){</span>
-<span id="cb3-46"><a href="#cb3-46" aria-hidden="true" tabindex="-1"></a>    <span class="kw">this</span><span class="op">.</span><span class="at">p5</span><span class="op">.</span><span class="fu">push</span>()</span>
-<span id="cb3-47"><a href="#cb3-47" aria-hidden="true" tabindex="-1"></a>    <span class="kw">this</span><span class="op">.</span><span class="at">ampSlider</span> <span class="op">=</span> <span class="kw">this</span><span class="op">.</span><span class="at">p5</span><span class="op">.</span><span class="fu">createSlider</span>(<span class="op">-</span><span class="dv">200</span><span class="op">,</span> <span class="dv">200</span><span class="op">,</span> <span class="kw">this</span><span class="op">.</span><span class="at">amp</span><span class="op">,</span> <span class="fl">0.5</span>)<span class="op">;</span></span>
-<span id="cb3-48"><a href="#cb3-48" aria-hidden="true" tabindex="-1"></a>    <span class="kw">this</span><span class="op">.</span><span class="at">freqSlider</span> <span class="op">=</span> <span class="kw">this</span><span class="op">.</span><span class="at">p5</span><span class="op">.</span><span class="fu">createSlider</span>(<span class="fl">0.01</span><span class="op">,</span> <span class="dv">20</span><span class="op">,</span> <span class="kw">this</span><span class="op">.</span><span class="at">freq</span><span class="op">,</span> <span class="fl">0.1</span>)<span class="op">;</span></span>
-<span id="cb3-49"><a href="#cb3-49" aria-hidden="true" tabindex="-1"></a>    <span class="kw">this</span><span class="op">.</span><span class="at">phaseSlider</span> <span class="op">=</span> <span class="kw">this</span><span class="op">.</span><span class="at">p5</span><span class="op">.</span><span class="fu">createSlider</span>(<span class="dv">0</span><span class="op">,</span> <span class="kw">this</span><span class="op">.</span><span class="at">p5</span><span class="op">.</span><span class="at">TWO_PI</span><span class="op">,</span> <span class="kw">this</span><span class="op">.</span><span class="at">phase</span><span class="op">,</span> <span class="fl">0.1</span>)<span class="op">;</span></span>
-<span id="cb3-50"><a href="#cb3-50" aria-hidden="true" tabindex="-1"></a>    <span class="kw">this</span><span class="op">.</span><span class="at">resSlider</span> <span class="op">=</span> <span class="kw">this</span><span class="op">.</span><span class="at">p5</span><span class="op">.</span><span class="fu">createSlider</span>(<span class="dv">1</span><span class="op">,</span> <span class="dv">1500</span><span class="op">,</span> <span class="kw">this</span><span class="op">.</span><span class="at">res</span><span class="op">,</span> <span class="dv">1</span>)<span class="op">;</span></span>
-<span id="cb3-51"><a href="#cb3-51" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-52"><a href="#cb3-52" aria-hidden="true" tabindex="-1"></a>    <span class="co">//this.ampSlider.position(10, 10);</span></span>
-<span id="cb3-53"><a href="#cb3-53" aria-hidden="true" tabindex="-1"></a>    <span class="co">//this.freqSlider.position(100, 140);</span></span>
-<span id="cb3-54"><a href="#cb3-54" aria-hidden="true" tabindex="-1"></a>    <span class="co">//this.phaseSlider.position(100, 180);</span></span>
-<span id="cb3-55"><a href="#cb3-55" aria-hidden="true" tabindex="-1"></a>    <span class="co">//this.resSlider.position(100, 220);</span></span>
-<span id="cb3-56"><a href="#cb3-56" aria-hidden="true" tabindex="-1"></a>    <span class="kw">this</span><span class="op">.</span><span class="at">p5</span><span class="op">.</span><span class="fu">pop</span>()<span class="op">;</span></span>
-<span id="cb3-57"><a href="#cb3-57" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb3-58"><a href="#cb3-58" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb3-59"><a href="#cb3-59" aria-hidden="true" tabindex="-1"></a>  <span class="fu">evaluate</span>(x<span class="op">,</span> norm<span class="op">=</span><span class="st">'norm'</span>){</span>
-<span id="cb3-60"><a href="#cb3-60" aria-hidden="true" tabindex="-1"></a>      <span class="kw">let</span> width <span class="op">=</span> <span class="kw">this</span><span class="op">.</span><span class="at">p5</span><span class="op">.</span><span class="at">width</span><span class="op">;</span></span>
-<span id="cb3-61"><a href="#cb3-61" aria-hidden="true" tabindex="-1"></a>      <span class="cf">return</span> <span class="op">-</span><span class="kw">this</span><span class="op">.</span><span class="at">amp</span> <span class="op">*</span> <span class="kw">this</span><span class="op">.</span><span class="at">p5</span><span class="op">.</span><span class="fu">sin</span>(<span class="kw">this</span><span class="op">.</span><span class="at">p5</span><span class="op">.</span><span class="at">TWO_PI</span> <span class="op">*</span> <span class="kw">this</span><span class="op">.</span><span class="at">freq</span> <span class="op">*</span> x <span class="op">/</span> width <span class="op">+</span> <span class="kw">this</span><span class="op">.</span><span class="at">phase</span>)<span class="op">;</span></span>
-<span id="cb3-62"><a href="#cb3-62" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb3-63"><a href="#cb3-63" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb3-64"><a href="#cb3-64" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb3-65"><a href="#cb3-65" aria-hidden="true" tabindex="-1"></a>  <span class="fu">draw</span>(res<span class="op">=</span><span class="dv">500</span><span class="op">,</span> time<span class="op">=</span><span class="kw">false</span>){</span>
-<span id="cb3-66"><a href="#cb3-66" aria-hidden="true" tabindex="-1"></a>    <span class="kw">this</span><span class="op">.</span><span class="at">p5</span><span class="op">.</span><span class="fu">stroke</span>(<span class="dv">200</span>)<span class="op">;</span></span>
-<span id="cb3-67"><a href="#cb3-67" aria-hidden="true" tabindex="-1"></a>    <span class="co">//this.p5.fill();</span></span>
-<span id="cb3-68"><a href="#cb3-68" aria-hidden="true" tabindex="-1"></a>    <span class="co">//this.p5.fill();</span></span>
-<span id="cb3-69"><a href="#cb3-69" aria-hidden="true" tabindex="-1"></a>    <span class="kw">this</span><span class="op">.</span><span class="at">p5</span><span class="op">.</span><span class="fu">strokeWeight</span>(<span class="dv">3</span>)<span class="op">;</span></span>
-<span id="cb3-70"><a href="#cb3-70" aria-hidden="true" tabindex="-1"></a>    <span class="kw">let</span> y<span class="op">;</span></span>
-<span id="cb3-71"><a href="#cb3-71" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb3-72"><a href="#cb3-72" aria-hidden="true" tabindex="-1"></a>    <span class="kw">this</span><span class="op">.</span><span class="at">amp</span> <span class="op">=</span> <span class="kw">this</span><span class="op">.</span><span class="at">ampSlider</span><span class="op">.</span><span class="fu">value</span>()<span class="op">;</span></span>
-<span id="cb3-73"><a href="#cb3-73" aria-hidden="true" tabindex="-1"></a>    <span class="kw">this</span><span class="op">.</span><span class="at">freq</span> <span class="op">=</span> <span class="kw">this</span><span class="op">.</span><span class="at">freqSlider</span><span class="op">.</span><span class="fu">value</span>()<span class="op">;</span></span>
-<span id="cb3-74"><a href="#cb3-74" aria-hidden="true" tabindex="-1"></a>    <span class="kw">this</span><span class="op">.</span><span class="at">phase</span> <span class="op">=</span> <span class="kw">this</span><span class="op">.</span><span class="at">phaseSlider</span><span class="op">.</span><span class="fu">value</span>()<span class="op">;</span></span>
-<span id="cb3-75"><a href="#cb3-75" aria-hidden="true" tabindex="-1"></a>    <span class="kw">this</span><span class="op">.</span><span class="at">res</span> <span class="op">=</span> <span class="kw">this</span><span class="op">.</span><span class="at">resSlider</span><span class="op">.</span><span class="fu">value</span>()<span class="op">;</span></span>
-<span id="cb3-76"><a href="#cb3-76" aria-hidden="true" tabindex="-1"></a>    <span class="kw">this</span><span class="op">.</span><span class="at">p5</span><span class="op">.</span><span class="fu">text</span>(<span class="st">"Amplitud:  A = "</span> <span class="op">+</span> <span class="kw">this</span><span class="op">.</span><span class="at">amp</span><span class="op">,</span> <span class="dv">10</span><span class="op">,</span> <span class="op">-</span><span class="dv">180</span>)<span class="op">;</span></span>
-<span id="cb3-77"><a href="#cb3-77" aria-hidden="true" tabindex="-1"></a>    <span class="kw">this</span><span class="op">.</span><span class="at">p5</span><span class="op">.</span><span class="fu">text</span>(<span class="st">"frecuencia:  f = "</span> <span class="op">+</span> <span class="kw">this</span><span class="op">.</span><span class="at">freq</span> <span class="op">+</span> <span class="st">' Hz.'</span><span class="op">,</span> <span class="dv">10</span><span class="op">,</span> <span class="op">-</span><span class="dv">160</span>)<span class="op">;</span></span>
-<span id="cb3-78"><a href="#cb3-78" aria-hidden="true" tabindex="-1"></a>    <span class="kw">this</span><span class="op">.</span><span class="at">p5</span><span class="op">.</span><span class="fu">text</span>(<span class="st">"frecuencia radial: omega = "</span> <span class="op">+</span> <span class="kw">this</span><span class="op">.</span><span class="at">p5</span><span class="op">.</span><span class="fu">round</span>(<span class="kw">this</span><span class="op">.</span><span class="at">p5</span><span class="op">.</span><span class="at">TWO_PI</span> <span class="op">*</span> <span class="kw">this</span><span class="op">.</span><span class="at">freq</span><span class="op">,</span> <span class="dv">1</span>) <span class="op">+</span> <span class="st">' rad/seg'</span><span class="op">,</span> <span class="dv">10</span><span class="op">,</span> <span class="op">-</span><span class="dv">140</span>)<span class="op">;</span></span>
-<span id="cb3-79"><a href="#cb3-79" aria-hidden="true" tabindex="-1"></a>    <span class="kw">this</span><span class="op">.</span><span class="at">p5</span><span class="op">.</span><span class="fu">text</span>(<span class="st">"fase: phi = "</span> <span class="op">+</span> <span class="kw">this</span><span class="op">.</span><span class="at">phase</span> <span class="op">+</span> <span class="st">' radianes.'</span><span class="op">,</span> <span class="dv">10</span><span class="op">,</span> <span class="op">-</span><span class="dv">120</span>)<span class="op">;</span></span>
-<span id="cb3-80"><a href="#cb3-80" aria-hidden="true" tabindex="-1"></a>    <span class="kw">this</span><span class="op">.</span><span class="at">p5</span><span class="op">.</span><span class="fu">text</span>(<span class="st">"resolución = "</span> <span class="op">+</span> <span class="kw">this</span><span class="op">.</span><span class="at">res</span> <span class="op">+</span> <span class="st">' muestras.'</span><span class="op">,</span> <span class="dv">400</span><span class="op">,</span> <span class="op">-</span><span class="dv">180</span>)<span class="op">;</span></span>
-<span id="cb3-81"><a href="#cb3-81" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb3-82"><a href="#cb3-82" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> (<span class="kw">let</span> x <span class="op">=</span> <span class="dv">0</span><span class="op">;</span> x <span class="op">&lt;</span> <span class="kw">this</span><span class="op">.</span><span class="at">p5</span><span class="op">.</span><span class="at">width</span><span class="op">;</span> x<span class="op">+=</span> <span class="kw">this</span><span class="op">.</span><span class="at">p5</span><span class="op">.</span><span class="at">width</span><span class="op">/</span><span class="kw">this</span><span class="op">.</span><span class="at">res</span>){</span>
-<span id="cb3-83"><a href="#cb3-83" aria-hidden="true" tabindex="-1"></a>      <span class="cf">if</span> (time) {</span>
-<span id="cb3-84"><a href="#cb3-84" aria-hidden="true" tabindex="-1"></a>        y <span class="op">=</span> <span class="kw">this</span><span class="op">.</span><span class="fu">evaluate</span>(x <span class="op">-</span> <span class="kw">this</span><span class="op">.</span><span class="at">p5</span><span class="op">.</span><span class="at">frameCount</span> <span class="op">*</span> <span class="dv">2</span><span class="op">,</span> <span class="st">'norm'</span>)<span class="op">;</span></span>
-<span id="cb3-85"><a href="#cb3-85" aria-hidden="true" tabindex="-1"></a>      } <span class="cf">else</span> {</span>
-<span id="cb3-86"><a href="#cb3-86" aria-hidden="true" tabindex="-1"></a>        y <span class="op">=</span> <span class="kw">this</span><span class="op">.</span><span class="fu">evaluate</span>(x<span class="op">,</span> <span class="st">'norm'</span>)<span class="op">;</span></span>
-<span id="cb3-87"><a href="#cb3-87" aria-hidden="true" tabindex="-1"></a>      }</span>
-<span id="cb3-88"><a href="#cb3-88" aria-hidden="true" tabindex="-1"></a>      <span class="kw">this</span><span class="op">.</span><span class="at">p5</span><span class="op">.</span><span class="fu">point</span>(x<span class="op">,</span> y)<span class="op">;</span></span>
-<span id="cb3-89"><a href="#cb3-89" aria-hidden="true" tabindex="-1"></a>    }</span>
-<span id="cb3-90"><a href="#cb3-90" aria-hidden="true" tabindex="-1"></a>  }</span>
-<span id="cb3-91"><a href="#cb3-91" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb3-92"><a href="#cb3-92" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-93"><a href="#cb3-93" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-display">
-<div>
-<div id="ojs-cell-2-2" data-nodetype="declaration">
-
-</div>
-</div>
-</div>
-</div>
-<section id="acústica" class="level1">
-<h1>Acústica</h1>
+<section id="acústica" class="level2">
+<h2 class="anchored" data-anchor-id="acústica">Acústica</h2>
 <p>Acústica es la rama de la física que estudia los fenómenos asociados a la <strong>generación</strong>, <strong>propagación</strong> y <strong>recepción</strong> del sonido.</p>
 <p>El <strong>sonido</strong> es una perturbación producida en un medio elástico, como el <em>aire</em>. Aquellas perturbaciones suelen ser extremadamente pequeñas, pero alguna <em>suficientemente</em> grande será visible al ojo humano.</p>
 <p>La acústica al ser una rama de la física, interactúa constantemente con otras ramas, las que se nombran a continuación.</p>
@@ -395,6 +276,7 @@ window.Quarto = {
 </tbody>
 </table>
 <p>Los ejemplos de interacción entre estas tres ramas de la física más conocidos son los <strong>micrófonos</strong> y <strong>altavoces</strong>.</p>
+</section>
 <section id="sonido" class="level2">
 <h2 class="anchored" data-anchor-id="sonido">Sonido</h2>
 <p>Entenderemos como <strong>sonido</strong> a aquellas pertubaciones en el aire (desde ahora <strong>señales acústicas</strong>) que pueden ser percibidas por el ser humano. El oído humano es capaz de escuchar las perturbaciones sonoras entre las 20 y las 20.000 oscilaciones por cada segundo (o Hz). Todo lo demás es imperceptible por el oído humano, siendo el rango inferior conocido como <strong>infrasonido</strong> y el superior como <strong>ultrasonido</strong>.</p>
@@ -442,26 +324,26 @@ window.Quarto = {
 <div class="cell">
 <details class="code-fold hidden">
 <summary>Code</summary>
-<div class="sourceCode cell-code hidden" id="cb4" data-startfrom="152" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 151;"><span id="cb4-152"><a href="#cb4-152" aria-hidden="true" tabindex="-1"></a><span class="fu">p5</span>(s1 <span class="kw">=&gt;</span> {</span>
-<span id="cb4-153"><a href="#cb4-153" aria-hidden="true" tabindex="-1"></a>    <span class="kw">let</span> wave<span class="op">;</span></span>
-<span id="cb4-154"><a href="#cb4-154" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-155"><a href="#cb4-155" aria-hidden="true" tabindex="-1"></a>    s1<span class="op">.</span><span class="at">setup</span> <span class="op">=</span> <span class="kw">function</span>() {</span>
-<span id="cb4-156"><a href="#cb4-156" aria-hidden="true" tabindex="-1"></a>        s1<span class="op">.</span><span class="fu">createCanvas</span>(<span class="dv">800</span><span class="op">,</span> <span class="dv">400</span>)<span class="op">;</span></span>
-<span id="cb4-157"><a href="#cb4-157" aria-hidden="true" tabindex="-1"></a>        wave <span class="op">=</span> <span class="kw">new</span> <span class="fu">Wave</span>(s1<span class="op">,</span> <span class="dv">100</span><span class="op">,</span> <span class="dv">10</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">1500</span>)<span class="op">;</span></span>
-<span id="cb4-158"><a href="#cb4-158" aria-hidden="true" tabindex="-1"></a>        <span class="co">// wave2 = new Wave(100, 2, 0, 1500);</span></span>
-<span id="cb4-159"><a href="#cb4-159" aria-hidden="true" tabindex="-1"></a>        wave<span class="op">.</span><span class="fu">createSliders</span>()<span class="op">;</span></span>
-<span id="cb4-160"><a href="#cb4-160" aria-hidden="true" tabindex="-1"></a>    }</span>
-<span id="cb4-161"><a href="#cb4-161" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-162"><a href="#cb4-162" aria-hidden="true" tabindex="-1"></a>    s1<span class="op">.</span><span class="at">draw</span> <span class="op">=</span> <span class="kw">function</span>() {</span>
-<span id="cb4-163"><a href="#cb4-163" aria-hidden="true" tabindex="-1"></a>        s1<span class="op">.</span><span class="fu">background</span>(<span class="dv">20</span>)<span class="op">;</span></span>
-<span id="cb4-164"><a href="#cb4-164" aria-hidden="true" tabindex="-1"></a>        s1<span class="op">.</span><span class="fu">translate</span>(<span class="dv">0</span><span class="op">,</span> s1<span class="op">.</span><span class="at">height</span><span class="op">/</span><span class="dv">2</span>)<span class="op">;</span></span>
-<span id="cb4-165"><a href="#cb4-165" aria-hidden="true" tabindex="-1"></a>        wave<span class="op">.</span><span class="fu">draw</span>()<span class="op">;</span></span>
-<span id="cb4-166"><a href="#cb4-166" aria-hidden="true" tabindex="-1"></a>    <span class="co">//wave2.draw();</span></span>
-<span id="cb4-167"><a href="#cb4-167" aria-hidden="true" tabindex="-1"></a>    }</span>
-<span id="cb4-168"><a href="#cb4-168" aria-hidden="true" tabindex="-1"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code hidden" id="cb1" data-startfrom="60" data-source-offset="0"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript" style="counter-reset: source-line 59;"><span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a><span class="fu">p5</span>(s1 <span class="kw">=&gt;</span> {</span>
+<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a>    <span class="kw">let</span> wave<span class="op">;</span></span>
+<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a>    s1<span class="op">.</span><span class="at">setup</span> <span class="op">=</span> <span class="kw">function</span>() {</span>
+<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a>        s1<span class="op">.</span><span class="fu">createCanvas</span>(<span class="dv">800</span><span class="op">,</span> <span class="dv">400</span>)<span class="op">;</span></span>
+<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a>        wave <span class="op">=</span> <span class="kw">new</span> <span class="fu">Wave</span>(s1<span class="op">,</span> <span class="dv">100</span><span class="op">,</span> <span class="dv">10</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="dv">1500</span>)<span class="op">;</span></span>
+<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a>        <span class="co">// wave2 = new Wave(100, 2, 0, 1500);</span></span>
+<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a>        wave<span class="op">.</span><span class="fu">createSliders</span>()<span class="op">;</span></span>
+<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a>    s1<span class="op">.</span><span class="at">draw</span> <span class="op">=</span> <span class="kw">function</span>() {</span>
+<span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a>        s1<span class="op">.</span><span class="fu">background</span>(<span class="dv">20</span>)<span class="op">;</span></span>
+<span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a>        s1<span class="op">.</span><span class="fu">translate</span>(<span class="dv">0</span><span class="op">,</span> s1<span class="op">.</span><span class="at">height</span><span class="op">/</span><span class="dv">2</span>)<span class="op">;</span></span>
+<span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a>        wave<span class="op">.</span><span class="fu">draw</span>()<span class="op">;</span></span>
+<span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a>    <span class="co">//wave2.draw();</span></span>
+<span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a>    }</span>
+<span id="cb1-76"><a href="#cb1-76" aria-hidden="true" tabindex="-1"></a>})</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-display">
-<div id="ojs-cell-3" data-nodetype="expression">
+<div id="ojs-cell-1" data-nodetype="expression">
 
 </div>
 </div>
@@ -544,11 +426,10 @@ Mostrar/Ocultar solución
 
 
 </section>
-</section>
 
 </main> <!-- /main -->
 <script type="ojs-module-contents">
-eyJjb250ZW50cyI6W3sibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6Ii8vIGFxdcOtIHZhbiBsb3MgY8OzZGlnb3MgZGUgamF2YXNjcmlwdCBuZWNlc2FyaW9zIHBhcmEgY29ycmVyIGVsIGxpYnJvLlxyXG5cclxuaW1wb3J0IHtQNX0gZnJvbSBcIkB0bWN3L3A1XCJcclxuXHJcbi8vUDUgPSByZXF1aXJlKCdodHRwczovL3VucGtnLmNvbS9wNUAxLjIuMC9saWIvcDUuanMnKTtcclxuXHJcbmZ1bmN0aW9uKiBwNShza2V0Y2gpIHtcclxuICBjb25zdCBlbGVtZW50ID0gRE9NLmVsZW1lbnQoJ2RpdicpO1xyXG4gIFxyXG4gIHlpZWxkIGVsZW1lbnQ7XHJcbiAgXHJcbiAgY29uc3QgaW5zdGFuY2UgPSBuZXcgUDUoc2tldGNoLCBlbGVtZW50LCB0cnVlKTtcclxuICBcclxuICB0cnkge1xyXG4gICAgd2hpbGUgKHRydWUpIHtcclxuICAgICAgeWllbGQgZWxlbWVudDtcclxuICAgIH1cclxuICB9IGZpbmFsbHkge1xyXG4gICAgaW5zdGFuY2UucmVtb3ZlKCk7XHJcbiAgfVxyXG59XHJcbi8vfCBlY2hvOiBmYWxzZVxyXG4ifSx7Im1ldGhvZE5hbWUiOiJpbnRlcnByZXQiLCJjZWxsTmFtZSI6Im9qcy1jZWxsLTIiLCJpbmxpbmUiOmZhbHNlLCJzb3VyY2UiOiJyZXF1aXJlKFwicDVcIilcclxuXHJcbmNsYXNzIFdhdmUge1xyXG4gIGNvbnN0cnVjdG9yKHA1LCBhbXAsIGZyZXEsIHBoYXNlLCByZXM9NTAwKXtcclxuICAgIHRoaXMucDUgPSBwNTtcclxuICAgIHRoaXMuYW1wID0gYW1wO1xyXG4gICAgdGhpcy5mcmVxID0gZnJlcTtcclxuICAgIHRoaXMucGhhc2UgPSBwaGFzZTtcclxuICAgIHRoaXMucmVzID0gcmVzO1xyXG4gIH1cclxuICBcclxuICBjcmVhdGVTbGlkZXJzKCl7XHJcbiAgICB0aGlzLnA1LnB1c2goKVxyXG4gICAgdGhpcy5hbXBTbGlkZXIgPSB0aGlzLnA1LmNyZWF0ZVNsaWRlcigtMjAwLCAyMDAsIHRoaXMuYW1wLCAwLjUpO1xyXG4gICAgdGhpcy5mcmVxU2xpZGVyID0gdGhpcy5wNS5jcmVhdGVTbGlkZXIoMC4wMSwgMjAsIHRoaXMuZnJlcSwgMC4xKTtcclxuICAgIHRoaXMucGhhc2VTbGlkZXIgPSB0aGlzLnA1LmNyZWF0ZVNsaWRlcigwLCB0aGlzLnA1LlRXT19QSSwgdGhpcy5waGFzZSwgMC4xKTtcclxuICAgIHRoaXMucmVzU2xpZGVyID0gdGhpcy5wNS5jcmVhdGVTbGlkZXIoMSwgMTUwMCwgdGhpcy5yZXMsIDEpO1xyXG5cclxuICAgIC8vdGhpcy5hbXBTbGlkZXIucG9zaXRpb24oMTAsIDEwKTtcclxuICAgIC8vdGhpcy5mcmVxU2xpZGVyLnBvc2l0aW9uKDEwMCwgMTQwKTtcclxuICAgIC8vdGhpcy5waGFzZVNsaWRlci5wb3NpdGlvbigxMDAsIDE4MCk7XHJcbiAgICAvL3RoaXMucmVzU2xpZGVyLnBvc2l0aW9uKDEwMCwgMjIwKTtcclxuICAgIHRoaXMucDUucG9wKCk7XHJcbiAgfVxyXG4gIFxyXG4gIGV2YWx1YXRlKHgsIG5vcm09J25vcm0nKXtcclxuICAgICAgbGV0IHdpZHRoID0gdGhpcy5wNS53aWR0aDtcclxuICAgICAgcmV0dXJuIC10aGlzLmFtcCAqIHRoaXMucDUuc2luKHRoaXMucDUuVFdPX1BJICogdGhpcy5mcmVxICogeCAvIHdpZHRoICsgdGhpcy5waGFzZSk7XHJcbiAgfVxyXG4gICAgXHJcbiAgXHJcbiAgZHJhdyhyZXM9NTAwLCB0aW1lPWZhbHNlKXtcclxuICAgIHRoaXMucDUuc3Ryb2tlKDIwMCk7XHJcbiAgICAvL3RoaXMucDUuZmlsbCgpO1xyXG4gICAgLy90aGlzLnA1LmZpbGwoKTtcclxuICAgIHRoaXMucDUuc3Ryb2tlV2VpZ2h0KDMpO1xyXG4gICAgbGV0IHk7XHJcbiAgICBcclxuICAgIHRoaXMuYW1wID0gdGhpcy5hbXBTbGlkZXIudmFsdWUoKTtcclxuICAgIHRoaXMuZnJlcSA9IHRoaXMuZnJlcVNsaWRlci52YWx1ZSgpO1xyXG4gICAgdGhpcy5waGFzZSA9IHRoaXMucGhhc2VTbGlkZXIudmFsdWUoKTtcclxuICAgIHRoaXMucmVzID0gdGhpcy5yZXNTbGlkZXIudmFsdWUoKTtcclxuICAgIHRoaXMucDUudGV4dChcIkFtcGxpdHVkOiAgQSA9IFwiICsgdGhpcy5hbXAsIDEwLCAtMTgwKTtcclxuICAgIHRoaXMucDUudGV4dChcImZyZWN1ZW5jaWE6ICBmID0gXCIgKyB0aGlzLmZyZXEgKyAnIEh6LicsIDEwLCAtMTYwKTtcclxuICAgIHRoaXMucDUudGV4dChcImZyZWN1ZW5jaWEgcmFkaWFsOiBvbWVnYSA9IFwiICsgdGhpcy5wNS5yb3VuZCh0aGlzLnA1LlRXT19QSSAqIHRoaXMuZnJlcSwgMSkgKyAnIHJhZC9zZWcnLCAxMCwgLTE0MCk7XHJcbiAgICB0aGlzLnA1LnRleHQoXCJmYXNlOiBwaGkgPSBcIiArIHRoaXMucGhhc2UgKyAnIHJhZGlhbmVzLicsIDEwLCAtMTIwKTtcclxuICAgIHRoaXMucDUudGV4dChcInJlc29sdWNpw7NuID0gXCIgKyB0aGlzLnJlcyArICcgbXVlc3RyYXMuJywgNDAwLCAtMTgwKTtcclxuICAgIFxyXG4gICAgZm9yIChsZXQgeCA9IDA7IHggPCB0aGlzLnA1LndpZHRoOyB4Kz0gdGhpcy5wNS53aWR0aC90aGlzLnJlcyl7XHJcbiAgICAgIGlmICh0aW1lKSB7XHJcbiAgICAgICAgeSA9IHRoaXMuZXZhbHVhdGUoeCAtIHRoaXMucDUuZnJhbWVDb3VudCAqIDIsICdub3JtJyk7XHJcbiAgICAgIH0gZWxzZSB7XHJcbiAgICAgICAgeSA9IHRoaXMuZXZhbHVhdGUoeCwgJ25vcm0nKTtcclxuICAgICAgfVxyXG4gICAgICB0aGlzLnA1LnBvaW50KHgsIHkpO1xyXG4gICAgfVxyXG4gIH1cclxuICBcclxuXHJcbn1cclxuLy9cclxuIn0seyJtZXRob2ROYW1lIjoiaW50ZXJwcmV0IiwiY2VsbE5hbWUiOiJvanMtY2VsbC0zIiwiaW5saW5lIjpmYWxzZSwic291cmNlIjoiXHJcblxyXG5wNShzMSA9PiB7XHJcbiAgICBsZXQgd2F2ZTtcclxuXHJcbiAgICBzMS5zZXR1cCA9IGZ1bmN0aW9uKCkge1xyXG4gICAgICAgIHMxLmNyZWF0ZUNhbnZhcyg4MDAsIDQwMCk7XHJcbiAgICAgICAgd2F2ZSA9IG5ldyBXYXZlKHMxLCAxMDAsIDEwLCAwLCAxNTAwKTtcclxuICAgICAgICAvLyB3YXZlMiA9IG5ldyBXYXZlKDEwMCwgMiwgMCwgMTUwMCk7XHJcbiAgICAgICAgd2F2ZS5jcmVhdGVTbGlkZXJzKCk7XHJcbiAgICB9XHJcblxyXG4gICAgczEuZHJhdyA9IGZ1bmN0aW9uKCkge1xyXG4gICAgICAgIHMxLmJhY2tncm91bmQoMjApO1xyXG4gICAgICAgIHMxLnRyYW5zbGF0ZSgwLCBzMS5oZWlnaHQvMik7XHJcbiAgICAgICAgd2F2ZS5kcmF3KCk7XHJcbiAgICAvL3dhdmUyLmRyYXcoKTtcclxuICAgIH1cclxufSkgXHJcbiJ9XX0=
+eyJjb250ZW50cyI6W3sibWV0aG9kTmFtZSI6ImludGVycHJldCIsImNlbGxOYW1lIjoib2pzLWNlbGwtMSIsImlubGluZSI6ZmFsc2UsInNvdXJjZSI6IlxyXG5cclxucDUoczEgPT4ge1xyXG4gICAgbGV0IHdhdmU7XHJcblxyXG4gICAgczEuc2V0dXAgPSBmdW5jdGlvbigpIHtcclxuICAgICAgICBzMS5jcmVhdGVDYW52YXMoODAwLCA0MDApO1xyXG4gICAgICAgIHdhdmUgPSBuZXcgV2F2ZShzMSwgMTAwLCAxMCwgMCwgMTUwMCk7XHJcbiAgICAgICAgLy8gd2F2ZTIgPSBuZXcgV2F2ZSgxMDAsIDIsIDAsIDE1MDApO1xyXG4gICAgICAgIHdhdmUuY3JlYXRlU2xpZGVycygpO1xyXG4gICAgfVxyXG5cclxuICAgIHMxLmRyYXcgPSBmdW5jdGlvbigpIHtcclxuICAgICAgICBzMS5iYWNrZ3JvdW5kKDIwKTtcclxuICAgICAgICBzMS50cmFuc2xhdGUoMCwgczEuaGVpZ2h0LzIpO1xyXG4gICAgICAgIHdhdmUuZHJhdygpO1xyXG4gICAgLy93YXZlMi5kcmF3KCk7XHJcbiAgICB9XHJcbn0pIFxyXG4ifV19
 </script>
 <script type="module">
 if (window.location.protocol === "file:") { alert("The OJS runtime does not work with file:// URLs. Please use a web server to view this document."); }
@@ -1099,7 +980,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   </div>
 </nav>
 </div> <!-- /content -->
-<script>var lightboxQuarto = GLightbox({"loop":false,"descPosition":"bottom","closeEffect":"zoom","openEffect":"zoom","selector":".lightbox"});
+<script>var lightboxQuarto = GLightbox({"loop":false,"selector":".lightbox","closeEffect":"zoom","descPosition":"bottom","openEffect":"zoom"});
 window.onload = () => {
   lightboxQuarto.on('slide_before_load', (data) => {
     const { slideIndex, slideNode, slideConfig, player, trigger } = data;

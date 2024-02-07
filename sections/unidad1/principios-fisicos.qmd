@@ -1,5 +1,7 @@
 ---
 title: "Principios de la Física"
+execute:
+    freeze: auto
 ---
 
 En la física exploramos el comportamiento de los objetos. Desde una fracción pequeña de un protón hasta el universo mismo, contemplando aproximadamente 45 órdenes de magnitud ($10^{45}$). Para expresar las mediciones cuantitativamente, necesitamos introducir las **unidades de medida**. Las unidades fundamentales de la física son: **longitud**, **tiempo** y **masa**.

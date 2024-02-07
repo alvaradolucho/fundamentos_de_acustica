@@ -44,6 +44,17 @@
     ]
   },
   {
+    "objectID": "sections/unidad1/elementos-del-sonido.html",
+    "href": "sections/unidad1/elementos-del-sonido.html",
+    "title": "Elementos del Sonido",
+    "section": "",
+    "text": "Actualmente se reconocen cinco elementos del sonido: amplitud, frecuencia, timbre, duración y ataque.\n\nAmplitud: Se refiere al tamaño de la onda y está relacionado con la intensidad sonora, o dicho de otra forma: sonoridad (loudness).\nTono: Se refiere a la altura tonal de la onda y está relacionada con la frecuencia de oscilación.\nTimbre: Se refiere a la cualidad que hace distinguibles a las fuentes sonoras. Está relacionada con la forma de la onda y su espectro de frecuencias.\nDuración: El tiempo en que el sonido se mantiene en ejecución.\nAtaque: El tiempo en que el sonido demora en llegar, desde el silencio hasta su máxima amplitud. Está relacionada con la percusividad del sonido.\n\nConsideremos un tono puro. La ecuación que lo representa se muestra a continuación:\n\\[y = A\\sin(\\omega t + \\phi)\\]\nEn donde:\n\n\\(y\\) es la posición de la onda en un tiempo determinado.\n\\(A\\) es la amplitud de la onda.\n\\(\\omega\\) es la velocidad angular de la oscilación. Se puede obtener conociendo la frecuencia de la onda, mediante \\(\\omega = 2\\pi f\\).\n\\(t\\) es un instante de tiempo determinado.\n\\(\\phi\\) es el desfase de la onda respecto de un comienzo determinado.\n\nEn el siguiente sketch, usted podrá manipular y escuchar tonos puros y señales complejas tales como ondas cuadradas, triangulares y dientes de sierra.",
+    "crumbs": [
+      "Unidad 1 - Elementos del Sonido",
+      "Elementos del Sonido"
+    ]
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Curso Fundamentos de Acústica",
@@ -99,14 +110,36 @@
     ]
   },
   {
-    "objectID": "sections/unidad1/elementos-del-sonido.html",
-    "href": "sections/unidad1/elementos-del-sonido.html",
-    "title": "Elementos del Sonido",
+    "objectID": "sections/unidad1/introduccion-a-la-propagacion-sonora.html",
+    "href": "sections/unidad1/introduccion-a-la-propagacion-sonora.html",
+    "title": "Sistema Fuente - Medio - Receptor",
     "section": "",
-    "text": "Actualmente se reconocen cinco elementos del sonido: amplitud, frecuencia, timbre, duración y ataque.\n\nAmplitud: Se refiere al tamaño de la onda y está relacionado con la intensidad sonora, o dicho de otra forma: sonoridad (loudness).\nTono: Se refiere a la altura tonal de la onda y está relacionada con la frecuencia de oscilación.\nTimbre: Se refiere a la cualidad que hace distinguibles a las fuentes sonoras. Está relacionada con la forma de la onda y su espectro de frecuencias.\nDuración: El tiempo en que el sonido se mantiene en ejecución.\nAtaque: El tiempo en que el sonido demora en llegar, desde el silencio hasta su máxima amplitud. Está relacionada con la percusividad del sonido.\n\nConsideremos un tono puro. La ecuación que lo representa se muestra a continuación:\n\\[y = A\\sin(\\omega t + \\phi)\\]\nEn donde:\n\n\\(y\\) es la posición de la onda en un tiempo determinado.\n\\(A\\) es la amplitud de la onda.\n\\(\\omega\\) es la velocidad angular de la oscilación. Se puede obtener conociendo la frecuencia de la onda, mediante \\(\\omega = 2\\pi f\\).\n\\(t\\) es un instante de tiempo determinado.\n\\(\\phi\\) es el desfase de la onda respecto de un comienzo determinado.\n\nEn el siguiente sketch, usted podrá manipular y escuchar tonos puros y señales complejas tales como ondas cuadradas, triangulares y dientes de sierra.",
+    "text": "Para que haya sonido debe haber un medio elástico por donde se propague. Imaginémoslo como gotas que caen en medio del lago. Nuestro medio, como hemos dicho, es el aire, pero los principios que veremos en este curso servirán para todo medio elástico, sea aire, agua, aceite, etc.\nConsiderando una temperatura estándar de 20°C, dos constantes del medio aire nos serán de gran utilidad para el resto del curso.\n\nVelocidad de propagación del sonido en el aire: \\[c = 344\\ \\dfrac{m}{s}\\]\nDensidad del aire: \\[\\rho_0 = 1.18\\ \\dfrac{kg}{m^3}\\]\n\nCon ello ahora podemos relacionar los conceptos de la onda espacial y temporal con el aire. De este modo completamos el sistema sonoro que conocemos.\n\\[\\lambda = \\dfrac{c}{f}\\]\ncon \\[20\\ \\text{Hz} \\leq f \\leq 20\\ \\text{kHz}\\]\n¿Cuál es el rango audible en términos de longitudes de onda?\n\n\nMostrar/Ocultar solución\n\n\nPara el caso \\(f = 20\\) Hz: \\(\\lambda = \\dfrac{c}{f} = \\dfrac{344}{20} = 17.2\\) m.\nPara el caso \\(f = 20\\) kHz: \\(\\lambda = \\dfrac{c}{f} = \\dfrac{344}{20000} = 0.0172\\ m = 1.72\\ cm\\).\nPor lo tanto, el rango audible expresado en longitudes de onda es: \\[1.7\\ cm \\leq \\lambda \\leq 17\\ m\\]",
     "crumbs": [
       "Unidad 1 - Elementos del Sonido",
-      "Elementos del Sonido"
+      "Sistema Fuente - Medio - Receptor"
+    ]
+  },
+  {
+    "objectID": "sections/unidad1/introduccion-a-la-propagacion-sonora.html#propagación-del-sonido",
+    "href": "sections/unidad1/introduccion-a-la-propagacion-sonora.html#propagación-del-sonido",
+    "title": "Sistema Fuente - Medio - Receptor",
+    "section": "",
+    "text": "Para que haya sonido debe haber un medio elástico por donde se propague. Imaginémoslo como gotas que caen en medio del lago. Nuestro medio, como hemos dicho, es el aire, pero los principios que veremos en este curso servirán para todo medio elástico, sea aire, agua, aceite, etc.\nConsiderando una temperatura estándar de 20°C, dos constantes del medio aire nos serán de gran utilidad para el resto del curso.\n\nVelocidad de propagación del sonido en el aire: \\[c = 344\\ \\dfrac{m}{s}\\]\nDensidad del aire: \\[\\rho_0 = 1.18\\ \\dfrac{kg}{m^3}\\]\n\nCon ello ahora podemos relacionar los conceptos de la onda espacial y temporal con el aire. De este modo completamos el sistema sonoro que conocemos.\n\\[\\lambda = \\dfrac{c}{f}\\]\ncon \\[20\\ \\text{Hz} \\leq f \\leq 20\\ \\text{kHz}\\]\n¿Cuál es el rango audible en términos de longitudes de onda?\n\n\nMostrar/Ocultar solución\n\n\nPara el caso \\(f = 20\\) Hz: \\(\\lambda = \\dfrac{c}{f} = \\dfrac{344}{20} = 17.2\\) m.\nPara el caso \\(f = 20\\) kHz: \\(\\lambda = \\dfrac{c}{f} = \\dfrac{344}{20000} = 0.0172\\ m = 1.72\\ cm\\).\nPor lo tanto, el rango audible expresado en longitudes de onda es: \\[1.7\\ cm \\leq \\lambda \\leq 17\\ m\\]",
+    "crumbs": [
+      "Unidad 1 - Elementos del Sonido",
+      "Sistema Fuente - Medio - Receptor"
+    ]
+  },
+  {
+    "objectID": "sections/unidad1/introduccion-a-la-propagacion-sonora.html#propagación-del-sonido-en-campo-libre",
+    "href": "sections/unidad1/introduccion-a-la-propagacion-sonora.html#propagación-del-sonido-en-campo-libre",
+    "title": "Sistema Fuente - Medio - Receptor",
+    "section": "Propagación del Sonido en Campo Libre",
+    "text": "Propagación del Sonido en Campo Libre\nSupongamos una fuente sonora que se encuentra en campo libre, es decir, que se encuentra suspendida en el aire a una distancia tal que no se enfrente a reflexiones sonoras. Asumamos a su vez, que esta fuente radía sonido a todas direcciones con igual intensidad (a esto le llamamos fuente omnidireccional). Vamos a necesitar algunos descriptores que nos permitan cuantificar la energía sonora, dependiendo de si estamos hablando de la fuente sonora, de algún punto en el espacio en que el sonido se propaga, y la energía que llega a los receptores. Los descriptores de indican a continuación:\n\n\n\n\n\n\n\n\nFuente sonora\nPropagación en el medio\nReceptor\n\n\n\n\nPotencia acústica\nIntensidad Acústica\nPresión sonora\n\n\n\\(W_A:\\quad \\left[W\\right]\\)\n\\(I_A:\\quad \\left[\\dfrac{W}{m^2}\\right]\\)\n\\(p_A:\\quad \\left[\\dfrac{N}{m^2}\\right]\\)",
+    "crumbs": [
+      "Unidad 1 - Elementos del Sonido",
+      "Sistema Fuente - Medio - Receptor"
     ]
   },
   {

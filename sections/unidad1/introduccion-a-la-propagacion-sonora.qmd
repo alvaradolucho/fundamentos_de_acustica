@@ -1,0 +1,51 @@
+---
+title: "Sistema Fuente - Medio - Receptor"
+execute:
+    freeze: auto
+---
+
+
+## Propagación del sonido
+
+Para que haya sonido debe haber un medio elástico por donde se propague. Imaginémoslo como gotas que caen en medio del lago. Nuestro medio, como hemos dicho, es el aire, pero los principios que veremos en este curso servirán para todo medio elástico, sea aire, agua, aceite, etc.
+
+Considerando una temperatura estándar de 20°C, dos constantes del medio aire nos serán de gran utilidad para el resto del curso.
+
+1. Velocidad de propagación del sonido en el aire:
+$$c = 344\ \dfrac{m}{s}$$
+
+2. Densidad del aire:
+$$\rho_0 = 1.18\ \dfrac{kg}{m^3}$$
+
+Con ello ahora podemos relacionar los conceptos de la onda espacial y temporal con el aire. De este modo completamos el sistema sonoro que conocemos.
+
+$$\lambda = \dfrac{c}{f}$$
+
+con $$20\ \text{Hz} \leq f \leq 20\ \text{kHz}$$
+
+¿Cuál es el rango audible en términos de longitudes de onda?
+
+<details>
+  <summary>Mostrar/Ocultar solución</summary>
+  
+  * Para el caso $f = 20$ Hz:
+    $\lambda = \dfrac{c}{f} = \dfrac{344}{20} = 17.2$ m.
+* Para el caso $f = 20$ kHz:
+    $\lambda = \dfrac{c}{f} = \dfrac{344}{20000} = 0.0172\ m = 1.72\ cm$.  
+    
+    Por lo tanto, el rango audible expresado en longitudes de onda es:
+    $$1.7\ cm \leq \lambda \leq 17\ m$$
+</details>
+
+## Propagación del Sonido en Campo Libre
+
+Supongamos una **fuente sonora** que se encuentra en **campo libre**, es decir, que se encuentra suspendida en el aire a una distancia tal que no se enfrente a reflexiones sonoras. Asumamos a su vez, que esta fuente radía sonido a todas direcciones con igual intensidad (a esto le llamamos **fuente omnidireccional**). Vamos a necesitar algunos descriptores que nos permitan cuantificar la energía sonora, dependiendo de si estamos hablando de la fuente sonora, de algún punto en el espacio en que el sonido se propaga, y la energía que llega a los receptores. Los descriptores de indican a continuación:
+
+| Fuente sonora | Propagación en el medio | Receptor |
+| ----------- | ----------- | ----------- | 
+| Potencia acústica  | Intensidad Acústica | Presión sonora |
+| $W_A:\quad \left[W\right]$ | $I_A:\quad \left[\dfrac{W}{m^2}\right]$ | $p_A:\quad \left[\dfrac{N}{m^2}\right]$ |
+
+![](img/sec1/1_cuerda_guitarra.jpg)
+
+![](img/sec1/2_guitarra_camino_oido.jpg)

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Fundamentos de Acústica - Elementos del Sonido</title>
+<title>Fundamentos de Acústica - Sistema Fuente - Medio - Receptor</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../../">
-<link href="../../sections/unidad1/oscilaciones-tiempo-espacio.html" rel="next">
-<link href="../../sections/unidad1/principios-acustica.html" rel="prev">
+<link href="../../sections/unidad1/oscilaciones-tiempo-espacio.html" rel="prev">
 <script src="../../site_libs/quarto-html/quarto.js"></script>
 <script src="../../site_libs/quarto-html/popper.min.js"></script>
 <script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -43,6 +42,9 @@ ul.task-list li input[type="checkbox"] {
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="../../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
 <link href="../../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="../../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -111,7 +113,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../sections/unidad1/principios-fisicos.html">Unidad 1 - Elementos del Sonido</a></li><li class="breadcrumb-item"><a href="../../sections/unidad1/elementos-del-sonido.html">Elementos del Sonido</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../sections/unidad1/principios-fisicos.html">Unidad 1 - Elementos del Sonido</a></li><li class="breadcrumb-item"><a href="../../sections/unidad1/introduccion-a-la-propagacion-sonora.html">Sistema Fuente - Medio - Receptor</a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -182,7 +184,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../sections/unidad1/elementos-del-sonido.html" class="sidebar-item-text sidebar-link active">
+  <a href="../../sections/unidad1/elementos-del-sonido.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Elementos del Sonido</span></a>
   </div>
 </li>
@@ -194,7 +196,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="../../sections/unidad1/introduccion-a-la-propagacion-sonora.html" class="sidebar-item-text sidebar-link">
+  <a href="../../sections/unidad1/introduccion-a-la-propagacion-sonora.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Sistema Fuente - Medio - Receptor</span></a>
   </div>
 </li>
@@ -209,9 +211,9 @@ window.Quarto = {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../sections/unidad1/principios-fisicos.html">Unidad 1 - Elementos del Sonido</a></li><li class="breadcrumb-item"><a href="../../sections/unidad1/elementos-del-sonido.html">Elementos del Sonido</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../sections/unidad1/principios-fisicos.html">Unidad 1 - Elementos del Sonido</a></li><li class="breadcrumb-item"><a href="../../sections/unidad1/introduccion-a-la-propagacion-sonora.html">Sistema Fuente - Medio - Receptor</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Elementos del Sonido</h1>
+<h1 class="title">Sistema Fuente - Medio - Receptor</h1>
 </div>
 
 
@@ -228,29 +230,63 @@ window.Quarto = {
 </header>
 
 
-<p>Actualmente se reconocen cinco elementos del sonido: <strong>amplitud</strong>, <strong>frecuencia</strong>, <strong>timbre</strong>, <strong>duración</strong> y <strong>ataque</strong>.</p>
+<section id="propagación-del-sonido" class="level2">
+<h2 class="anchored" data-anchor-id="propagación-del-sonido">Propagación del sonido</h2>
+<p>Para que haya sonido debe haber un medio elástico por donde se propague. Imaginémoslo como gotas que caen en medio del lago. Nuestro medio, como hemos dicho, es el aire, pero los principios que veremos en este curso servirán para todo medio elástico, sea aire, agua, aceite, etc.</p>
+<p>Considerando una temperatura estándar de 20°C, dos constantes del medio aire nos serán de gran utilidad para el resto del curso.</p>
+<ol type="1">
+<li><p>Velocidad de propagación del sonido en el aire: <span class="math display">\[c = 344\ \dfrac{m}{s}\]</span></p></li>
+<li><p>Densidad del aire: <span class="math display">\[\rho_0 = 1.18\ \dfrac{kg}{m^3}\]</span></p></li>
+</ol>
+<p>Con ello ahora podemos relacionar los conceptos de la onda espacial y temporal con el aire. De este modo completamos el sistema sonoro que conocemos.</p>
+<p><span class="math display">\[\lambda = \dfrac{c}{f}\]</span></p>
+<p>con <span class="math display">\[20\ \text{Hz} \leq f \leq 20\ \text{kHz}\]</span></p>
+<p>¿Cuál es el rango audible en términos de longitudes de onda?</p>
+<details>
+<summary>
+Mostrar/Ocultar solución
+</summary>
 <ul>
-<li><strong>Amplitud:</strong> Se refiere al tamaño de la onda y está relacionado con la intensidad sonora, o dicho de otra forma: <strong>sonoridad</strong> (<em>loudness</em>).</li>
-<li><strong>Tono:</strong> Se refiere a la altura tonal de la onda y está relacionada con la <strong>frecuencia de oscilación</strong>.</li>
-<li><strong>Timbre:</strong> Se refiere a la cualidad que hace distinguibles a las fuentes sonoras. Está relacionada con la <strong>forma de la onda</strong> y su <strong>espectro de frecuencias</strong>.</li>
-<li><strong>Duración:</strong> El <strong>tiempo</strong> en que el sonido se mantiene en ejecución.</li>
-<li><strong>Ataque:</strong> El tiempo en que el sonido demora en llegar, desde el silencio hasta su máxima amplitud. Está relacionada con la <em>percusividad</em> del sonido.</li>
+<li><p>Para el caso <span class="math inline">\(f = 20\)</span> Hz: <span class="math inline">\(\lambda = \dfrac{c}{f} = \dfrac{344}{20} = 17.2\)</span> m.</p></li>
+<li><p>Para el caso <span class="math inline">\(f = 20\)</span> kHz: <span class="math inline">\(\lambda = \dfrac{c}{f} = \dfrac{344}{20000} = 0.0172\ m = 1.72\ cm\)</span>.</p>
+<p>Por lo tanto, el rango audible expresado en longitudes de onda es: <span class="math display">\[1.7\ cm \leq \lambda \leq 17\ m\]</span></p></li>
 </ul>
-<p>Consideremos un <strong>tono puro</strong>. La ecuación que lo representa se muestra a continuación:</p>
-<p><span class="math display">\[y = A\sin(\omega t + \phi)\]</span></p>
-<p>En donde:</p>
-<ul>
-<li><span class="math inline">\(y\)</span> es la posición de la onda en un tiempo determinado.</li>
-<li><span class="math inline">\(A\)</span> es la amplitud de la onda.</li>
-<li><span class="math inline">\(\omega\)</span> es la velocidad angular de la oscilación. Se puede obtener conociendo la frecuencia de la onda, mediante <span class="math inline">\(\omega = 2\pi f\)</span>.</li>
-<li><span class="math inline">\(t\)</span> es un instante de tiempo determinado.</li>
-<li><span class="math inline">\(\phi\)</span> es el desfase de la onda respecto de un comienzo determinado.</li>
-</ul>
-<p>En el siguiente sketch, usted podrá manipular y escuchar tonos puros y señales complejas tales como <strong>ondas cuadradas, triangulares y dientes de sierra</strong>.</p>
-<iframe width="710" height="450" src="https://editor.p5js.org/alvaradolucho/full/qaIjMdcxe">
-</iframe>
+</details>
+</section>
+<section id="propagación-del-sonido-en-campo-libre" class="level2">
+<h2 class="anchored" data-anchor-id="propagación-del-sonido-en-campo-libre">Propagación del Sonido en Campo Libre</h2>
+<p>Supongamos una <strong>fuente sonora</strong> que se encuentra en <strong>campo libre</strong>, es decir, que se encuentra suspendida en el aire a una distancia tal que no se enfrente a reflexiones sonoras. Asumamos a su vez, que esta fuente radía sonido a todas direcciones con igual intensidad (a esto le llamamos <strong>fuente omnidireccional</strong>). Vamos a necesitar algunos descriptores que nos permitan cuantificar la energía sonora, dependiendo de si estamos hablando de la fuente sonora, de algún punto en el espacio en que el sonido se propaga, y la energía que llega a los receptores. Los descriptores de indican a continuación:</p>
+<table class="table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Fuente sonora</th>
+<th>Propagación en el medio</th>
+<th>Receptor</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Potencia acústica</td>
+<td>Intensidad Acústica</td>
+<td>Presión sonora</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(W_A:\quad \left[W\right]\)</span></td>
+<td><span class="math inline">\(I_A:\quad \left[\dfrac{W}{m^2}\right]\)</span></td>
+<td><span class="math inline">\(p_A:\quad \left[\dfrac{N}{m^2}\right]\)</span></td>
+</tr>
+</tbody>
+</table>
+<p><a href="img/sec1/1_cuerda_guitarra.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img src="img/sec1/1_cuerda_guitarra.jpg" class="img-fluid"></a></p>
+<p><a href="img/sec1/2_guitarra_camino_oido.jpg" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img src="img/sec1/2_guitarra_camino_oido.jpg" class="img-fluid"></a></p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -786,17 +822,39 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../../sections/unidad1/principios-acustica.html" class="pagination-link  aria-label=" principios="" de="" la="" acústica"="">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Principios de la Acústica</span>
+      <a href="../../sections/unidad1/oscilaciones-tiempo-espacio.html" class="pagination-link  aria-label=" oscilaciones="" en="" el="" tiempo="" y="" espacio"="">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Oscilaciones en el tiempo y en el espacio</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../../sections/unidad1/oscilaciones-tiempo-espacio.html" class="pagination-link" aria-label="Oscilaciones en el tiempo y en el espacio">
-        <span class="nav-page-text">Oscilaciones en el tiempo y en el espacio</span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav>
 </div> <!-- /content -->
+<script>var lightboxQuarto = GLightbox({"selector":".lightbox","descPosition":"bottom","loop":false,"openEffect":"zoom","closeEffect":"zoom"});
+window.onload = () => {
+  lightboxQuarto.on('slide_before_load', (data) => {
+    const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+    const href = trigger.getAttribute('href');
+    if (href !== null) {
+      const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+      if (imgEl !== null) {
+        const srcAttr = imgEl.getAttribute("src");
+        if (srcAttr && srcAttr.startsWith("data:")) {
+          slideConfig.href = srcAttr;
+        }
+      }
+    } 
+  });
+
+  lightboxQuarto.on('slide_after_load', (data) => {
+    const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+    if (window.Quarto?.typesetMath) {
+      window.Quarto.typesetMath(slideNode);
+    }
+  });
+
+};
+          </script>
 
 
 

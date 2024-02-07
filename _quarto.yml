@@ -29,6 +29,7 @@ website:
             - sections/unidad1/principios-acustica.qmd
             - sections/unidad1/elementos-del-sonido.qmd
             - sections/unidad1/oscilaciones-tiempo-espacio.qmd
+            - sections/unidad1/introduccion-a-la-propagacion-sonora.qmd
 
 lightbox: true
 
